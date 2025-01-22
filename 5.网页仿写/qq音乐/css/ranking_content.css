@@ -1,0 +1,38 @@
+/* 排行榜 */
+.ranking_root_box {
+    background: url(../static/song_content_bac.jpg) 50% 0 repeat-x;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+/* 版心 */
+.ranking_inner_box {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 标题盒子 */
+.ranking_title_box {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 24px;
+}
+/* 标题5 */
+.ranking_title {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    position: relative;
+    left: 540px;
+    top: -10px;
+    width: 196px;
+    height: 40px;
+}
+/* 更多 */
+.ranking_last {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}

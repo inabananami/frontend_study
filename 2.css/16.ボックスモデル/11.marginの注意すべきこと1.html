@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>11.マージンの注意すべきこと1</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            background-color: grey;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 子要素のmarginは父要素のcontentを参考にして計算します -->
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

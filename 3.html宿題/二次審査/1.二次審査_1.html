@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 表格尺寸为：长900像素，宽300像素，边框颜色为蓝色，宽度为8px， 外边框与内边框的距离为10px*/
+        /* 内边框间的距离也为10px */
+        table {
+            border: 8px solid blue;
+            width: 900px;
+            height: 300px;
+            border-spacing: 10px;
+        }
+        /* 表格框的边框为蓝色，宽度2px */
+        th,
+        td {
+            border: 2px solid blue;
+        }
+        /* 说明框背景色为天蓝色 */
+        td.text {
+            background-color: skyblue;
+            width: 100px;
+        }
+        /* 单独调整标题为合适的宽度 */
+        #title {
+            height: 50px;
+        }
+        /* 调整下拉选框至合适长度
+         */
+        select {
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建一个表格 -->
+    <table>
+        
+        <!-- 表头共一列，横跨五列 -->
+        <thead id="title">
+            <tr>
+                <th colspan="5">24届新生前端表格练习</th>
+            </tr>
+        </thead>
+
+        <!-- 表身共五列，三行 -->
+        <tbody align="center" valign="middle">
+
+            <!-- 第一行为姓名，姓名input框，年龄，年龄input框，图片框，图片横跨三行-->
+            <tr>
+                <td  class="text">
+                    <label for="name">姓名</label>
+                </td>
+
+                <td>
+                    <input type="text" id="name" placeholder="请输入姓名">
+                </td>
+
+                <td class="text">
+                    <label for="age">年龄</label>
+                </td>
+
+                <td>
+                    <input type="text" id="age" placeholder="请输入年龄">
+                </td>
+
+                <td rowspan="3" >
+                    <!-- 用超链接实现跳转百度的功能 -->
+                    <a href="https://www.baidu.com" target="_blank">
+                        <img  width="200px" src="./tiger1.jpg" alt="tiger" title="这是一张图片">
+                    </a>
+                </td>
+            </tr> 
+
+            <!-- 第二行为学号, 学号input框，班级，班级选择框-->
+            <tr>
+                <td class="text">
+                    <label for="num">学号</label>
+                </td>
+
+                <td>
+                    <input type="text" id="num" placeholder="请输入学号">
+                </td>
+
+                <td class="text">
+                    <label for="class1">班级</label>
+                </td>
+
+                <td>
+                    <select name="class" id="class1">
+                        <option>1班</option>
+                        <option>2班</option>
+                        <option selected>3班</option>
+                        <option>4班</option>
+                        <option>5班</option>
+                        <option>6班</option>
+                        <option>7班</option>
+                        <option>8班</option>
+                    </select>
+                </td>
+            </tr> 
+
+            <!-- 第三行为性别，性别勾选栏，入学时间，入学时间日期选择栏 -->
+            <tr>
+                <td class="text">性别</td>
+
+                <td>
+                    <label for="male">男</label>
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="female">女</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                </td>
+
+                <td class="text">
+                    <label for="time">入学时间</label>
+                </td>
+
+                <td>
+                    <input type="date" id="time">
+                </td>
+            </tr> 
+        </tbody>
+    </table>
+</body>
+</html>

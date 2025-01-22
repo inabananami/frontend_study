@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>8.ボックスのパディング</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 400px;
+            /* 左側のパディング */
+            /* padding-left: 20px; */
+
+            /* 上側のパディング */
+            /* padding-top: 30px; */
+
+            /* 右側のパディング */
+            /* padding-right: 40px; */
+
+            /* 下側のパディング */
+            /* padding-bottom: 50px; */
+
+            /* 複合属性、一つの数値を書いたら、「四の方向のパディングは同じ」という意味です */
+            /* padding: 20px; */
+
+            /* 複合属性、二つの数値を書いたら、「上側と下側、右側と左側」という意味です */
+            /* padding: 20px 10px; */
+
+            /* 複合属性、三つの数値を書いたら、「上、左と右、下」という意味です */
+            /* padding: 10px 20px 30px; */
+
+            /* 複合属性、四つの数値を書いたら、「上、右、下、左」という意味です */
+            /* padding: 10px 20px 30px 40px; */
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        span {
+            font-size: 20px;
+            /* 行内要素は左側と右側のパディングを設定したら、隣の要素を覆うかもしれない */
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color: orange;
+        }
+        /* 下記は反対の例です */
+        img {
+            width: 200px;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">こんにちは</div>
+    <hr>
+    <span>元気です</span>
+    <hr>
+    <img src="../写真/select.png" alt="ayumu">
+    <div>ayumu</div>
+</body>
+</html>

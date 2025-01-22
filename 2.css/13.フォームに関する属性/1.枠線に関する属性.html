@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.枠線に関する属性</title>
+    <style>
+        h2 {
+            border: 2px dashed green;
+            width:600px;
+        }
+        div {
+            border: 2px solid green;
+            width:200px;
+            height:224px;
+        }
+        table {
+            /* 枠線のサイズ */
+            /* border-width: 2px; */
+            /* 枠線のスタイル */
+            /* border-style: solid; */
+            /* 枠線の色 */ 
+            /* border-color: green; */
+            /* 枠線の複合属性 */
+            /* border: 2px solid green; */
+            width: 200px;
+            height: 200px;
+        }
+        th,td{
+            border: 2px solid blue;
+            border-spacing: 1px;
+        }
+        span {
+            border:2px double #ED7D95;
+        }
+    </style>
+</head>
+<body>
+    <h2>枠線の属性は、フォームだけ利用できるだけでなく、他の要素も利用できます。</h2>
+    <span>頑張り続けるよ！</span>
+    <br>
+    <br>
+    <div>
+        <table>
+            <caption>メンバー情報</caption>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>性別</th>
+                    <th>年齢</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>張三</td>
+                    <td>男性</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>女性</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>王五</td>
+                    <td>男性</td>
+                    <td>17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

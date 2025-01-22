@@ -1,0 +1,204 @@
+/* 上方选择栏根盒子 */
+.banner_root_box {
+    height: 141.8px;
+    background-color: white;
+}
+/* 分割上下选择框的盒子 */
+.inner_section_box {
+    max-width: 1200px;
+    height: 51.8px;
+    margin: 0 auto;
+    padding-top: 90px;
+    position:relative;
+}
+/* 标题图片 */
+.qqmusic_title{
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+/* qq音乐logo */
+.qqmusic_logo {
+    width: 170px;
+    height: 46px;
+}
+/* banner内容分类列表 */
+.banner_content_list {
+    position:absolute;
+    left: 198px;
+    top: 0;
+}
+/* 主要内容区物件 */
+.banner_content_item {
+    position:relative;
+    float: left;
+    margin-right: -5px;
+}
+/* 具体物件的样式 */
+.content_item_link {
+    display: block;
+    padding: 0 20px;
+    line-height: 90px;
+    height: 90px;
+    text-align: center;
+    font-size: 18px;
+}
+/* 下方分类栏列表 */
+.banner_sort_list {
+    height: 51px;
+    line-height: 51px;
+    border-top: 1px solid #f2f2f2;
+    padding-left: 230px;
+    margin-right: -50px;
+}
+/* 分类栏物件 */
+.banner_sort_item {
+    float: left;
+    font-size: 15px;
+    color: #c1c1c1;
+    margin-right: 47px;
+}
+.sort_item_link {
+    display:block;
+}
+/* 搜索栏 */
+.banner_top_search {
+    position: absolute;
+    top: 0;
+    right: 284px;
+}
+/* 搜索框外围 */
+.banner_search_input {
+    border: 1px solid #c9c9c9;
+    padding:0 33px 0 11px;
+    line-height: 36px;
+    height: 36px;
+    margin-top: 26px;
+    position: relative;
+    border-radius: 3px;
+    background-color: white;
+}
+/* 搜索框 */
+.search_input__input {
+    width: 174px;
+    height: 36px;
+    border: 0;
+    font-size: 14px;
+    background-color: transparent;
+}
+/* 大按钮框体 */
+.search_input_btn {
+    position: absolute;
+    top: 44%;
+    right: 0;
+    border: 0;
+    width: 38px;
+    height: 35px;
+    overflow: visible;
+    background-color: transparent;
+}
+/* 搜索图片（调用背景图片集，鬼才开发者） */
+.icon_search {
+    position: absolute;
+    top: 50%;
+    right: 11px;
+    margin-top: -8px;
+    width: 16px;
+    height: 16px;
+    background-position: 0 -40px;
+    background-image: url(../static/small_icon_collection.png);
+}
+/* 当鼠标悬浮时，将背景图片集移动20px */
+.icon_search:hover {
+    background-position: 0 -60px;
+}
+/* 账号相关内容 */
+.banner_acc_list {
+    height: 90px;
+    line-height: 90px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* 账号部分 */
+.acc_login_item {
+    display: block;
+    font-size: 0;
+    height: 90px;
+    line-height: 90px;
+}
+/* 登陆超链接 */
+.acc_login_link {
+    position: relative;
+    font-size: 16px;
+    float: left;
+    width: 38px;
+    margin-right: 10px;
+    text-align: center;
+    height: 90px;
+}
+/* 用户头像 */
+.acc_pic_cover {
+    width: 38px;
+    height: 38px;
+    border-radius: 90px;
+    vertical-align: -14px;
+    margin-top: 24px;
+}
+/* qq登录 */
+.acc_pic_icon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    bottom: 24px;
+    right: -2px;
+}
+/* vip专区 */
+.vip_item{
+    float: left;
+    position: relative;
+    width: 122px;
+    height: 38px;
+    font-size: 13px;
+    margin-top: 24px;
+}
+.VIP_charge_select {
+    background-color: #31c27c;
+    color: white;
+    border-color: #31c27c;
+    display: block;
+    line-height: 38px;
+    padding: 0 15px 0 10px;
+    text-align: center;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+}
+.select_after::after {
+    position: absolute;
+    content:"";
+    right: 8px;
+    top: 16px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid;
+}
+/* 充值选项 */
+.charge_item {
+    width: 83px;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    height: 38px;
+    font-size: 13px;
+    margin-top: 24px;
+}
+.pay_item_select {
+    display: block;
+    line-height: 38px;
+    padding: 0 15px 0 10px;
+    text-align: center;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+}

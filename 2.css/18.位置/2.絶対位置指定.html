@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.絶対位置指定</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+            position: relative;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: #888;
+            /* position: absolute; */
+        }
+        .box2 {
+            background-color: orange;
+            /* 絶対位置を開けると、 フローから外します */
+            position: absolute;
+            left: 20px;
+            /* right: 10px; */
+            top: 220px;
+            /* bottom: 0px; */
+            transition: 0.2s all linear;
+            /* 絶対位置を開けると、浮動が利用できない */
+            /* float: right; */
+        }
+        .box3 {
+            background-color: green;
+            /* position: absolute; */
+        }
+        .outer:hover .box2 {
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">やばい、見つかった</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>セレクター優先級_詳しく説明</title>
+    <style>
+        #idol-otaku {
+            color: #ED7D95;
+        }
+        div>p>span:nth-child(1) {
+        color: green;
+        }
+        .container span.intro {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="test">
+        <p>
+            <span class="intro" id="idol-otaku">アイドルオタクと申します！（笑</span>
+            <br>
+            <span>無言フォローでも大丈夫です</span>
+        </p>
+    </div>
+</body>
+</html>

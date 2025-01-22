@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>子セレクター</title>
+    <style>
+        /* divの直系子要素a */
+        div>a {
+            color:#ED7D95;
+        }
+        #koizumi {
+            color: #37B484;
+        }
+        div>p>a {
+            color:#E7D600;
+        }
+        div.cp>a {
+            color:#01B7ED;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">上原さん</a>
+        <a href="#" id="koizumi">小泉さん</a>
+        <a href="#">大西さん</a>
+        <p>
+            <a href="#">相良さん</a>
+            <div class="cp">
+                <a href="#">前田さん</a>
+            </div>  
+        </p>
+    </div>
+</body>
+</html>

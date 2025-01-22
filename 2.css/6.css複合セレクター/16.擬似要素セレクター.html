@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.偽要素セレクター</title>
+    <style>
+        /* 偽要素とは？　ーー　要素によく似ていますが、要素じゃなくて、要素の特殊な位置です */
+        /* 選択したのはdivの最初の文字です */
+        div::first-letter {
+            color: rgb(111, 233, 255);
+            font-size: 40px;
+        }
+        /* 選択したのはdivの最初の行です */
+        div::first-line {
+            background-color: pink;
+        }
+
+        /* 選択したのはdiv要素でマオスに選択された文字です */
+        div::selection {
+            background-color: green;
+            color:rgb(111, 233, 255);
+        }
+        
+        /* 選択したのはinput要素のヒント文字です */
+        input::placeholder {
+            color: #ED7D95;
+        }
+
+        /* p要素の最初の位置を選択し、そして擬似要素を作ります */
+        p::before {
+            content: "￥";
+        }
+
+        /* p要素の最後の位置を選択し、そして擬似要素を作ります */
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+<body>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic mollitia enim ipsum voluptates repellat. Nesciunt repellat libero quidem, dolorem asperiores mollitia est repudiandae nostrum. Libero harum vero pariatur unde a culpa rerum, esse vitae sunt voluptas numquam molestiae ipsa, consequuntur eos eum iusto atque veniam ex deleniti. Ea suscipit iure delectus commodi quisquam reiciendis pariatur, culpa aliquam voluptate, ullam veritatis?</div>
+    <br>
+    <input type="text" placeholder="ユーザー名を入力下さい">
+    <p>3999</p>
+    <p>6999</p>
+    <p>9999</p>
+    <p>19999</p>
+</body>
+</html>

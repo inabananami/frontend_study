@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>セレクター優先級_簡単に説明</title>
+    <style>
+        /* 行内スタイル > IDセレクター > クラスセレクター > 要素セレクター　>　通配セレクター */
+        #idol-otaku {
+            color: red;
+        }
+
+        /* .intro {
+            color: #a5fd21;
+        } */
+
+        /* h2 {
+            color: orange;
+        } */
+
+        * {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="intro" id="idol-otaku">アイドルオタクと申します！（笑</h2>
+</body>
+</html>

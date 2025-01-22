@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>偽クラスセレクター</title>
+    <style>
+        /* 偽クラスとは？ーークラスによく似ているけど、クラスじゃなくて、エレメントの特殊な状態の一つの記述です */
+
+        /* 選択したのはまだ訪れたことのないa要素です */
+        a:link {
+            color: orange;
+        }
+        /* 選択したのはもう訪れていたa要素です */
+        a:visited {
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://zh.moegirl.org.cn"> 萌娘百科（萌え娘の百科）へ</a>
+    <a href="https://google.com" target="_blank">グーグルへ</a>
+    <a href="https://ciallo.cc">ciallo!</a>
+    <a href="https://zh.moegirl.org.cn/上原歩夢">私の嫁</a>
+</body>
+</html>

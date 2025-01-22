@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>25.要素の間の空白問題</title>
+    <style>
+        div {
+            height: 300px;
+            background-color: gray;
+            /* 解決方法2：font‐sizeを0にします */
+            font-size: 0px;
+        } 
+        .s1 {
+            background-color: skyblue;
+        }
+        .s2 {
+            background-color: orange;
+        }
+        .s3 {
+            background-color: green;
+        }
+        img {
+            width: 200px;
+        }
+        span {
+            /* divにfont-sizeを設定した上、spanのfont-sizeを設定します */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 解決方法1：改行をやめます -->
+        <span class="s1">こんにちは！</span><span class="s2">おはよう！</span>
+        <span class="s1">こんばんは！</span>
+        <hr>
+        <img src="../写真/ayumu goods.JPG" alt="ayumu_goods">
+        <img src="../写真/ayumu goods.JPG" alt="ayumu_goods">
+        <img src="../写真/ayumu goods.JPG" alt="ayumu_goods">
+    </div>
+</body>
+</html>

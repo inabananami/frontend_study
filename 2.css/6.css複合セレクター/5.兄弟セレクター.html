@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟セレクター</title>
+    <style>
+        h1 {
+            color: rgb(255, 196, 0);
+            font-size: 30px;
+        }
+        /* この書き方はdivの後ろに第1名のp兄弟だけで効用があります */
+        /* div+p {
+            color: #EEEEEE;
+        } */
+
+        /* この書き方はdivの後ろの全てのp兄弟も効用があります */
+        h1~p {
+            color: #ED7D95;
+        }
+        /* この書き方は第一のli要素を除いて、後ろのすべてのli要素に効用があります */
+        li+li {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>私のサイトへようこそ！</h1>
+    <div>テスト</div>
+    <p>フロントエンド</p>
+    <p>バックエンド</p>
+    <p>Java</p>
+    <p>UI</p>
+
+    <!-- 下記は応用です -->
+    <ul>
+        <li>フロントエンド</li>
+        <li>バックエンド</li>
+        <li>Java</li>
+        <li>UI</li>
+    </ul>
+</body>
+</html>

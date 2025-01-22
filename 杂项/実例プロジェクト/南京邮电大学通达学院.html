@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang=zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>南京邮电大学通达学院</title>
+    <style>
+        /* 消除默认样式和解除浮动的影响 */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-size: 13px;
+            color: #333;
+            line-height: 1;
+            font-family: "Micro";
+            background-color: #F5F5F5;
+        }
+        .clearfix {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* 清除列表的默认样式 */
+        ul {
+            list-style-type: none;
+        }
+
+        /* 顶端页面 */
+        .head1 {
+            height: 48px;
+            border: 1px solid gainsboro;
+            text-align: center;
+            background-color: white;
+        }
+        /* 内部盒子 */
+        .head_inner1 {
+            width:1200px;
+            height: 48px;
+            text-align: left;
+            display: inline-block;
+        }
+        /* 欢迎语 */
+        .welcome {
+            width: 195px;
+            height: 48px;
+            line-height: 48px;
+        }
+
+        /* logo与搜索栏部分 */
+        .head2 {
+            height: 145px;
+            text-align: center;
+        }
+        /* 内部盒子2 */
+        .head2_inner {
+            width: 1200px;
+            height: 145px;
+            vertical-align: top;
+            margin: 0 auto;
+        }
+        /* 左盒子 */
+        .leftbox {
+            width: 435px;
+            height: 130px;
+            float: left;
+        }
+        /* logo盒子 */
+        .logobox {
+            width: 435px;
+            height: 98px;
+            margin-top: 32px;
+            position: relative;
+            right: -200px;
+        }
+        /* 右盒子 */
+        .rightbox {
+            width: 370px;
+            height: 45.333px;
+            margin-top: 47px;
+            float: right;
+        }
+        /* 搜索盒子 */
+        .searchbox {
+            width: 368.667px;
+            height: 39px;
+            border: 0.667px solid #d0d0d0;
+            text-align: right;
+        }
+        /* 搜索栏 */
+        .search-title {
+            width: 268.667px;
+            color: #b3b3b3;
+            height: 31px;
+            padding: 4px 9px;
+            border: 0px;
+            float: left;
+        }
+        /* 搜索键 */
+        .submit {
+            width: 99px;
+            height: 40px;
+            border: 0px;
+            background: url(./pictures/sous.png) no-repeat center;
+            cursor: pointer;
+            position: relative;
+            top: -40.333px;
+        }
+
+        /* banner区域 */
+        .main-banner {
+            height: 42px;
+            margin: 0 auto;
+            background: #0573b8;
+        }
+        /* 承载banner的box */
+        .bannerbox {
+            width: 1100px;
+            height: 42px;
+            margin: 0 auto;
+        }
+        /* banner内小box */
+        .banner {
+            font-size: 16px;
+            color: white;
+            padding: 0 35px;
+            float: left;
+            line-height: 42px;
+        }
+        /* 包裹图片的盒子 */
+        .picturebox {
+            height: 446px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        /* 页面大图 */
+        .main-picture {
+            width: 1200px;
+            height: 430px;
+        }
+        /* 大图底下的more */
+        .more {
+            width: 1200px;
+            height: 13px;
+            margin: 0 auto;
+            margin-top: 3px;
+            text-align: right;
+            vertical-align: top;
+        }
+        /* 信息栏1 */
+        .container1 {
+            height: 451.167px;
+        }
+        /* 定位大盒子 */
+        .container1-inner {
+            width: 1200px;
+            height: 421.167px;
+            padding-top: 30px;
+            margin: 0 auto;
+        }
+        /* 承载左右信息栏的盒子 */
+        .container1-together {
+            width: 1200px;
+            height: 421.167px;
+        }
+        /* 左右信息栏盒子 */
+        .inform {
+            width: 576px;
+            height: 421.167px;
+            background-color: white;
+            float: left;
+        }
+        .inform-box1 {
+            margin-right: 48px;
+        }
+        /* 信息栏banner */
+        .inform-banner {
+            width: 576px;
+            height: 52px;
+            border-bottom: 2px solid #d4d4d4;
+        }
+        /* 信息栏标题 */
+        .inform-title {
+            width: 80px;
+            height: 52px;
+            color: #0573b8;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            left: 28px;
+            float: left;
+            border-bottom: 2px solid  #0573b8;
+        }
+        /* 信息栏更多+ */
+        .more-plus {
+            width: 38.383px;
+            height: 52px;
+            float: right;
+            font-size: 14px;
+            margin-right: 27px;
+            line-height: 52px;
+        }
+        /* 头版新闻 */
+        .content1 {
+            width: 520px;
+            height: 140px;
+            padding: 27px 28px;
+        }
+        .news-picture {
+            width: 208px;
+            height: 140px;
+        }
+        #head-title {
+            font-size: 15px;
+            line-height: 40px;
+            font-weight: bold;
+            float: right;
+        }
+        /* 新闻区2 */
+        .content2 {
+            width: 520px;
+            height: 144px;
+            padding: 0 28px 30px 28px;
+        }
+        /* 新闻标题 */
+        .news-title {
+            width: 416px;
+            height: 36px;
+            overflow: hidden;
+            float: left;
+        }
+        .news-content-box {
+            width: 416px;
+            height: 36px;
+        }
+        .news-meta {
+            width: 38.85px;
+            color: #777;
+            height: 36px;
+            float: right;
+        }
+
+
+
+    /* 底部banner */
+    .bottom-banner {
+        height: 158px;
+        background-color: #0573b8;
+    }
+    .banner-container {
+        width: 1144px;
+        height: 104px;
+        padding: 27px 28px;
+    }
+    </style>
+</head>
+<body>
+    <!-- 顶端页面 -->
+    <div class="head1">
+        <!-- 内部box -->
+        <div class="head_inner1">
+            <!-- 欢迎语 -->
+            <div class="welcome">欢迎访问南京邮电大学通达学院！</div>
+        </div>
+    </div>
+    <!-- logo与搜索栏部分 -->
+    <div class="head2">
+        <div class="head2_inner clearfix">
+                <!-- 左box里的logo -->
+                <div class="leftbox">
+                    <div class="logobox">
+                        <img src="./pictures/logo.png" alt="logo">
+                    </div>
+                </div>
+                <!-- 右box的搜索栏 -->
+                <div class="rightbox">
+                    <div class="searchbox clearfix">
+                        <input class="search-title" name="keyword" type="text" placeholder="请输入搜索内容">
+                        <input class="submit" name="submit" type="submit" value="">
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- banner结构与布局 -->
+    <div class="main-banner">
+        <!-- 撑起8个banner的盒子 -->
+        <div class="bannerbox clearfix">
+            <div class="banner" style="letter-spacing: 5px;">首页</div>
+            <div class="banner">学院概况</div>
+            <div class="banner">部门设置</div>
+            <div class="banner">招生就业</div>
+            <div class="banner">综合服务</div>
+            <div class="banner">信息公开</div>
+            <div class="banner">主题教育网</div>
+            <div class="banner">统一认证平台</div>
+        </div>
+    </div>
+    <!-- 页面主图 -->
+    <div class="picturebox">
+        <img class="main-picture" src="./pictures/中国式现代化.jpg" alt="china modern">
+        <!-- 更多按钮 -->
+        <div class="more">
+            <img src="./pictures/icon_more_1.gif" alt="more">
+        </div>
+    </div>
+    <!-- 主内容区 -->
+    <div class="container1">
+        <!-- 学校要闻与通知公告区 -->
+        <div class="container1-inner clearfix">
+            <div class="inform inform-box1">
+                <!-- 标题与更多 -->
+                <div class="inform-banner clearfix">
+                    <div class="inform-title">学校要闻</div>
+                    <div class="more-plus">更多+</div>
+                </div>
+                <!-- 正文 -->
+                <div class="content1">
+                    <img class="news-picture" src="./pictures/news-picture.jpg" alt="news-picture">
+                    <div >
+                        <div id="head-title">【访企拓岗】党委书记赵允玉带队赴扬州乾照光电有限公司开展访企拓岗</div>
+                        <div id="head-content">初冬的校园，处处洋溢着重逢的喜悦。来自全国各地的校友欢聚一堂，共叙师生情、母校情...</div>
+                        <div>2024-11-28</div>
+                    </div>
+                </div>
+                <div class="content2">
+                    <!--  其他新闻区 -->
+                    <ul>
+                        <li class="news-content-box">
+                            <div class="news-title">我院召开监督工作联席会议</div>
+                            <div class="news-meta">11/28</div>
+                        </li>
+                        <li class="news-content-box">
+                            <div class="news-title">【访企拓岗】我院赴淮安市开展访企拓岗促就业活动</div>
+                            <div class="news-meta">11/26</div>
+                        </li>
+                        <li class="news-content-box">
+                            <div class="news-title">【访企拓岗】党委书记赵允玉带队赴扬州乾照光电有限公司开展访企拓岗</div>
+                            <div class="news-meta">11/26</div>
+                        </li>
+                        <li class="news-content-box">
+                            <div class="news-title">二十年再聚首 共忆青春梦——学院成功举办2000级校友毕业20周年返校交流会</div>
+                            <div class="news-meta">11/25</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="inform">
+                <!-- 标题与更多 --> 
+                <div class="inform-banner clearfix">
+                    <div class="inform-title">通知公告</div>
+                    <div class="more-plus">更多+</div>
+                </div>
+                <!-- 正文 -->
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1" style="margin-bottom: 30px;">
+        <div class="container1-inner clearfix">
+            <div class="inform inform-box1">
+                <!-- 标题与更多 -->
+                <div class="inform-banner clearfix">
+                    <div class="inform-title">人才培养</div>
+                    <div class="more-plus">更多+</div>
+                </div>
+            </div>
+            <div class="inform">
+                <div class="inform-banner clearfix">
+                    <div class="inform-title">校园文化</div>
+                    <div class="more-plus">更多+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <!-- 其他功能区 -->
+    <div class="bottom-banner">
+        <div class="banner-container">
+            <img src="./pictures/icon.png" alt="icon">
+            <div class="icon-title">教务系统</div>
+        </div>
+    </div>
+</body>
+</html>

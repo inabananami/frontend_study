@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>18.内容の溢れを処理する</title>
+    <style>
+      #d1 {
+        width: 400px;
+        height: 200px;
+        background-color: skyblue;
+        /* 最もよく使われます */
+        overflow: hidden;
+        overflow: scroll;
+        overflow: auto;
+        /* ディフォルトの値です */
+        overflow: visible;
+
+        /* x、ｙ軸の専用属性です */
+        /* overflow-x: */
+        /* overflow-y: */
+      }
+      #d2 {
+        width: 1000px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam ab aperiam
+      nemo aut nisi enim ea, alias fugit doloribus placeat neque, soluta fugiat,
+      odit rerum id. Aspernatur enim facilis dolorum, beatae ex culpa nostrum
+      <div id="d2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, blanditiis. Dolorem mollitia ipsum hic soluta, saepe perferendis eveniet temporibus eius vitae asperiores veritatis officia vero tenetur ab eligendi rem commodi fuga cupiditate voluptate atque quibusdam debitis quaerat! Reiciendis quisquam autem id doloribus quae ab dicta, et ducimus, aut est dolorem.</div>
+      nesciunt fuga voluptate adipisci reprehenderit? Facere maxime culpa magnam
+      aspernatur non error distinctio fugiat eveniet porro, hic quia vel
+      tempora. Impedit labore voluptatum dolorum adipisci amet voluptatem
+      incidunt ipsa id ea facere mollitia debitis, consequatur minima non vitae
+      pariatur distinctio eius praesentium provident magnam nulla! Autem cumque
+      illum in eligendi possimus eveniet molestias maiores sed! Placeat eveniet
+      molestiae ducimus quae, nam quos nisi quod vel? Tempora.
+    </div>
+  </body>
+</html>

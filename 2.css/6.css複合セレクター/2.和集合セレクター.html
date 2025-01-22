@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>和集合セレクター</title>
+    <style>
+        .rich {
+            color: gold;
+        }
+        .beauty {
+            color: pink;
+        }
+        .dog {
+            color:blue;
+        }
+        .pig {
+            color:rgb(255, 155, 172);
+        }
+        /* 複数のセレクター対応のエレメントを選択
+        するため、下記のような書き方はもっと簡潔です */
+        #rana,
+        .rich,
+        .beauty,
+        .dog,
+        .pig {
+            font-size: 40px;
+            background-color: rgb(135, 135, 135);
+            width: 280px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="rich good">金持ち張三</h2>
+    <h2 class="beauty good">声優佐藤さん</h2>
+    <h2>倒産した大和さん（スタイルを足さない）</h2>
+    <hr>
+    <p class="dog good">子犬ワンちゃん</p>
+    <p class="pig good">子豚ペッパ</p>
+    <p id="rana">野良猫の楽奈　ちゃん</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>フォントの複合属性</title>
+    <style>
+        .quote1 {
+            /* 最後の二位は必ず「フォント大きさ」と「フォント家族」です */
+            font: normal 60px "BIZ UDPゴシック";  
+        }
+        em {
+            color: #FF8A00;
+            /* 方正大黒（ArenaCondensed Italic）にします */
+            font:italic bold 80px "ArenaCondensed Italic";
+        }
+    </style>
+</head>
+<body>
+    <div class="quote1">日本語はすべて<br>
+        <em>虹ヶ咲</em>
+    から学んだ！</div>
+</body>
+</html>

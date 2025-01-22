@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.フレックスボックスを触発する</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bigbox {
+            width: 500px;
+            height: 500px;
+            border: 10px solid gray;
+            margin: 100px auto;
+            /* 父要素 */
+            display:flex;
+        }
+        .bigbox>div,.bigbox>b {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed red;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 父要素 -->
+    <div class="bigbox">
+        <!-- 子要素 -->
+        <!-- <div>1</div>
+        <div>2</div>
+        <div>3</div> -->
+        
+        <b>1</b>
+        <!-- <b>2</b> -->
+        <!-- <b>3</b> -->
+    </div>
+</body>
+</html>

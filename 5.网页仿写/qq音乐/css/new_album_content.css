@@ -1,0 +1,50 @@
+/* 新碟首发 */
+.new_album_root_box {
+    background: url(../static/song_content_bac.jpg) 50% 0 repeat-x;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+/* 版心 */
+.new_album_inner_box {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+/* 标题4 */
+.new_album_title_box {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 24px;
+}
+.new_album_title {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    position: relative;
+    left: 520px;
+    top: -10px;
+    width: 196px;
+    height: 40px;
+}
+/* 新碟地区列表 */
+.new_album_list {
+    max-width: 1200px;
+    height: 50px;
+    text-align: center;
+    margin:0 auto;
+}
+/* 新碟地区物件 */
+.new_album_list_item {
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 24px;
+}
+/* 更多 */
+.new_album_list_last {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: auto;
+}

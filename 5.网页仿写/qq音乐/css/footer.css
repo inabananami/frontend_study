@@ -1,0 +1,16 @@
+.footer {
+    color: #999;
+    background-color: #333;
+    clear: both;
+}
+.footer_inner {
+    max-width: 1200px;
+    margin:0 auto;
+    position: relative;
+}
+.footer_info {
+    overflow: hidden;
+    border-bottom: 1px solid #353535;
+    position: relative;
+    padding-bottom: 45px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>5.浮動した後の影響を解決する</title>
+    <style>
+      .outer {
+        width: 500px;
+        background-color: gray;
+        border: 1px solid black;
+        /* 解決方法1 */
+        /* height: 122px; */
+
+        /* 解決方法2 おすすめしない */
+        /* float: left; */
+
+        /* 解決方法3 */
+        /* overflow: scroll; */
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        border: 1px solid black;
+        margin: 10px;
+      }
+      .box1,
+      .box2,
+      .box3,
+      .box4 {
+        float: left;
+      }
+      .mahou {
+        /* 解決方法4 */
+        /* すべての浮動している兄弟要素の影響を除きます */
+        /* 行内要素と浮動している要素はclearを使用できない */
+        clear: both;
+      }
+
+      /* 解決方法5 */
+      .outer::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+      <div class="box box5">5</div>
+      <!-- <div class="mahou"></div> -->
+    </div>
+    <div style="background-color: orange;">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam dolores
+      perspiciatis repellendus aspernatur deleniti iusto beatae maiores
+      inventore. Nihil tempora molestiae commodi modi suscipit id soluta iure,
+      ducimus dicta vero nulla, aspernatur praesentium laboriosam in, cupiditate
+      nesciunt sequi. Facere nihil ipsa inventore minima quaerat dolorum,
+      accusantium ut corporis error architecto nulla minus optio et quib　usdam
+      veniam aliquam rem excepturi? Voluptas eum natus, debitis eaque
+      repudiandae, illo doloremque laborum tempora qui necessitatibus
+      perspiciatis placeat fuga nobis dicta ex eligendi iusto doloribus commodi!
+      Officia, quia nam at, a ea non voluptate repudiandae iure suscipit,
+      expedita esse quis est sunt vero totam. Harum.
+    </div>
+  </body>
+</html>
