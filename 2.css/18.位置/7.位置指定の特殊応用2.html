@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>7.位置指定の特殊応用1</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 400px;
+            background-color: #888;
+            position: relative;
+        }
+        .inner {
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+            font-size: 20px;
+            position: absolute;
+            /* （おすすめ）中にする方法１ */
+            /* top: 0;*/
+            /* left: 0;*/
+            /* bottom: 0; */
+            /* right: 0; */
+            /* margin:auto; */
+
+            /* 中にする方法２ */
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">こんにちは！</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>テキスト修飾</title>
+    <style>
+        div {
+            font-size: 40px;
+        }
+        .site1 {
+            /* 複数の属性がある場合、順番の要求が要りません */
+            /* これは緑色の波形の上の線です */
+           text-decoration: overline wavy green;
+        }
+        .site2 {
+            /* これは灰色の点形の下の線です */
+            text-decoration: underline dotted #777777;
+        }
+        .site3 {
+            /* これは削除線です */
+            text-decoration: line-through;
+        }
+        .site4 {
+            font-size: 40px;
+            /* 各種類の線はありません */
+            /* a要素などの下線を削除することができます */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="site1">サイト1</div>
+    <div class="site2">サイト2</div>
+    <div class="site3">サイト3</div>
+    <a class="site4" href="https://www.google.co.jp">サイト4</a>
+</body>
+</html>

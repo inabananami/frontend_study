@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.CSSによく使う長さ単位</title>
+    <style>
+        html {
+            font-size: 40px;
+        }
+        #d1 {
+            /* 第一種の長さ単位：px（ピクセル） */
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        #d2 {
+            /* 第二種の長さ単位：em（現在の要素、又は父要素に対するfont-sizeの倍数）*/
+            width: 10em;
+            height: 10em;
+            font-size: 20px;
+            background-color: orange;
+        }
+        #d3 {
+            /* 第二種の長さ単位：rem（ルート要素に対するfont-sizeの倍数）*/
+            /* htmlのfont-sizeの値を参考にする */
+            width: 10rem;
+            height: 10rem;
+            font-size: 20px;
+            background-color: green;
+        }
+        #d4 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: grey;
+        }
+        .inside {
+            /* 第四種の長さ単位：％（父要素に対するパーセント） */
+            width: 50%;
+            height: 25%;
+            font-style: 20px;
+            background-color: orange;
+        }
+        .test {
+            font-size: 40px;
+            /* emを使って、font-sizeが大きくなっても、固定フォーマットに従います */
+            text-indent: 2em;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">1</div>
+    <hr>
+    <div id="d2">2</div>
+    <hr>
+    <div id="d3">3</div>
+    <hr>
+    <div id="d4">
+        <div class="inside">4</div>
+    </div>
+    <hr>
+    <div class="test">千里の道も一歩から</div>
+</body>
+</html>

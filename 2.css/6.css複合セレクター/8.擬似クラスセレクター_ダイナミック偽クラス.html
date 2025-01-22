@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ダイナミック偽クラス</title>
+    <style>
+        /* 選択したのはまだ訪れたことのないaエレメントです */
+        a:link {
+            color: orange;
+        }
+        /* 選択したのはもう訪れていたaエレメントです */
+        a:visited {
+            color: grey;
+        }
+        /* 選択したのはマオスの浮遊状態のaエレメントです */
+        a:hover {
+            color: skyblue;
+        }
+        /* 選択したのはアクティブ状態のaエレメントです */
+        a:active {
+            color: pink;
+        }
+        /* 選択したのはマオスの浮遊状態のspanエレメントです */
+        span:hover {
+            color: #ED7D95;
+        }
+        /* 選択したのはアクティブ状態のspanエレメントです */
+        span:active {
+            color: antiquewhite;
+        }
+        /* 選択したのはピントを獲得したエレメントです */
+        input:focus {
+            color: pink;
+            background-color: rgb(255, 166, 0);
+        }
+
+        select:focus {
+            color: pink;
+            background-color: rgb(212, 138, 0);
+        }
+    </style>
+</head>
+<body>
+    <a href="https://youtube.com">ユーチューブへ</a>
+    <a href="https://google.com" target="_blank">グーグルへ</a>
+    <span>上原さん</span>\
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <hr>
+    <h2>こんにちは！</h2>
+    <select>
+        <option value="tokyo">東京</option>
+        <option value="shizuoka">静岡</option>
+        <option value="hukuoka">福岡</option>
+        <option value="sapporo">札幌</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>26.行内ブロック要素における幽霊空白問題</title>
+    <style>
+        div {
+            width: 600px;
+            background-color: skyblue;
+            /* 解決方法3：font-sizeを0にします  */
+            /* 注意点：文字がある場合は、特別にfont-sizeを設定するようとします */
+            font-size: 0;
+        }
+        img {
+            width: 500px;
+            /* 解決方法2：vertical-alignをbaselineを除いて他の値にします */
+            /* vertical-align: bottom; */
+            
+            /* 解決方法1：displayをblockにします*/
+            /*注意点：文字がない場合だけ使用できます */
+            /* display: block; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../写真/ayumu goods.JPG" alt="ayumu">
+    </div>
+</body>
+</html>

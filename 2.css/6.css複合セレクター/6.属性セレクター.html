@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>属性セレクター</title>
+    <style>
+        /* 最初の書き方：タイトル属性を持つ要素を選択します */
+        /* [title] {
+            color: rgb(199, 0, 0);
+        } */
+        /* 第二の書き方：タイトル属性を持つ要素で、その属性値はvalorantであるものを選択します*/
+        [title="valorant"] {
+            color: #FF4654;
+        }
+        /* 第三の書き方：タイトル属性を持つ要素で、最頭文字は「ｍ」であるものを選択します */
+        [title^="m"] {
+            color: #F663A4;
+        }
+        /* 第四の書き方： タイトル属性を持つ要素で、最後の文字は「ｍ」であるものを選択します*/
+        [title*="d"] {
+            color: orange;
+        }
+    </style>
+</head> 
+<body>
+    <div title="CS">CS2</div>
+    <div title="valorant">VARORANT</div>
+    <div title="music-game">osu!</div>
+    <div title="band">バンドリ！</div>
+    <div title="idol-game">リンク！ライク！ラブライブ！</div>
+</body>
+</html>

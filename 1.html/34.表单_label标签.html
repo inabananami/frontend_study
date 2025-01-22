@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表单_label标签</title>
+</head>
+<body>
+    <form action="https://search.jd.com/search" target="_blank">
+        <!-- lebel标签实现了文字与控件的链接 -->
+        <label for="zhanghu">账户：</label>
+        <input id="zhanghu" type="text" name="account">
+        <br>
+        <label for="mima">密码：</label>
+        <input id="mima" type="password" name="pwd">
+        <br>
+        性别：
+        <input id="nan" type="radio" name="gender" value="male">
+        <label for="nan">男</label>
+        <label>
+            <input type="radio" name="gender" value="female">女
+        </label>
+        <br>
+        爱好：
+        <label>
+            <input type="checkbox" name="hobby" value="watchlive">看live
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="watchseiyuu">看女声优
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="watchsyoujyoband">看少女乐队
+        </label>
+        <input type="hidden" name="from" value="bilibili">
+        <br>
+        <label for="other">其他：</label>
+        <textarea id="other" name="othor" cols="18" rows="3"></textarea>
+        <br>
+        籍贯：
+        <select name="place">
+            <option value="冀" >河北省</option>
+            <option value="晋">山西省</option>
+            <option value="鲁">山东省</option>
+            <option value="粤" selected>广东省</option>
+        </select>
+        <br>
+        <br>
+        <button>确认</button>
+        <input type="reset" value="点我重置">
+        <input type="button" value="检测账户是否被注册">
+    </form>
+</body>
+</html>

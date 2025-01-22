@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>行の高さ_注意すべきこと</title>
+    <style>
+        /* 注意点１：行の高さは小さい過ぎればどうなりますか？
+        ーー文字が重ねていて、バックグラウンドの最小値は0pxです。 負数にはできません。*/
+        #nihonngo1 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 0px;
+        }
+        /* 注意点2： 行の高さは継承できます */
+        #nihonngo2 {
+            font-size: 40px;
+            background-color: orange;
+            line-height: 1.5;
+        }
+        span {
+            color: red;
+            font-size: 100px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- <div id="nihonngo1">
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+    </div> -->
+
+    <div id="nihonngo2">
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて<span>女子声優</span>から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+        日本語はすべて女子声優から学んだ！
+    </div>
+</body>
+</html>

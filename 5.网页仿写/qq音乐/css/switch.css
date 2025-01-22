@@ -1,0 +1,32 @@
+/* 底部switch盒子 */
+.song_cont_switch {
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    cursor: default;
+}
+/* switch本体 */
+.switch_item {
+    display: inline-block;
+    width: 28px;
+    height: 12px;
+    padding-bottom:26px;
+}
+/* 用div表示的方形switch背景 */
+.song_cont_switch__item {
+    display: inline-block;
+    width: 8px;
+    height:8px;
+    background: url(../static/switch_bright.png);
+}
+#switch_item_first {
+    display: inline-block;
+    width: 8px;
+    height:8px;
+    background: url(../static/switch_dark.png);
+}
+/* 当鼠标悬浮时，换一个浅色switch */
+.a_darker:hover {
+    background: url(../static/switch_dark.png);
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>否定偽クラス</title>
+    <style>
+        /* 選択したのは「fail」という属性を除いたdivのp子要素です */
+        /* div>p:not(.fail) {
+            color: red;
+        } */
+        /* div>p:not([title^="頑張れ！"]) {
+            color: red;
+        } */
+         
+        /*  選択したのはdivのp子要素ですが、divの最初のp子要素を除きます */
+        div>p:not(:first-child) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>張三さん：98点</p>
+        <p>李四さん：90点</p>
+        <p>王五さん：85点</p>
+        <p>趙六さん：84点</p>
+        <p class="fail" title="頑張れ！">孫七さん：58点</p>
+        <p class="fail" title="頑張れ！">老八さん：59点</p>
+    </div>
+</body>
+</html>

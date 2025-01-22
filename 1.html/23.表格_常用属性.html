@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>表格_基本结构</title>
+</head>
+<body>
+    <!-- border数值>1时，只能控制外部边框像素，不能控制内部边框像素 -->
+    <!-- width为表格的宽度，宽度类属性不是平均分配的，是根据内容分配的-->
+    <!-- cellspacing是单元格间的距离，为0只是合并单元格 -->
+    <table border="1" width="500" height="500" cellspacing="0">  
+        <caption>乐队信息</caption>
+        <!-- align为水平方向对齐方式，有left，center，right三种对齐方式 -->
+        <!-- valign为垂直方向对齐方式，有top，middle，bottom三种对齐方式 -->
+        <thead height="50" align="center" valign="middle"> 
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <!-- 表格主体,主体里面的单元格为<td> -->
+        <tbody height="300" align="center" valign="middle">
+            <tr height="100">
+                <td width="100"
+                height="100"
+                align="right"
+                valign="bottom">
+                井芹仁菜
+                </td>  
+                <td>女</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>河原木桃香</td>
+                <td>女</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>RUPA</td>
+                <td>女</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>安和すばる</td>
+                <td>女</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>海老塚智</td>
+                <td>女</td>
+                <td>16</td>
+            </tr>
+        </tbody>
+        <!-- 表格脚注 -->
+        <tfoot height="50" align="center" valign="middle">
+            <td></td>
+            <td></td>
+            <td>共计5人</td>
+        </tfoot>
+    </table>
+</body>
+</html>

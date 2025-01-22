@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>子孫セレクター</title>
+    <style>
+        ul li {
+            color: rgb(0, 176, 68);
+        }
+        ol li {
+            color: #ED7D95;
+        }
+        ul li a {
+            color: rgb(255, 174, 0);
+        }
+        #shizuku {
+            color: rgb(0, 153, 255);
+        }
+        .it-tech li {
+            color: rgb(5, 230, 200);
+        }
+        ol .intro {
+            color:chocolate;
+        }
+        ol #shizuku {
+            color: rgb(0, 153, 255);
+        }
+        #idol {
+            color: #FC03F8;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>歌う</li>
+        <li>踊る</li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=xvIbyz-dZA0" target="_blank">応援する</a>
+        </li>
+        <div>
+            <li>音ゲーをプレイする</li>
+        </div>
+    </ul>
+    <hr>
+    <ol>
+        <li>大西さん</li>
+        <li>上原さん</li>
+        <li id="shizuku">前田さん</li>
+    </ol>
+    <br>
+    <h2>IT技術</h2>
+    <ol class="it-tech">
+        <li>フロントエンド</li>
+        <div class="intro">紹介：ウェブ界面などの開発技術</div>
+        <li>バックエンド</li>
+        <li>UI</li>
+    </ol>
+    <h2 id="idol">アイドル</h2>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>10.偽クラスセレクター_結構偽クラス_２</title>
+    <style>
+        ol>li:first-child {
+            color: #ED7D95;
+        }
+        ol>li:nth-child(3) {
+            color: #F162A1;
+        }
+        ol>li:last-child {
+            color: #E07F0A;
+        }
+        /* ol>li:nth-child(2n-1) {
+            color: #ED01AB;
+        } */
+        /* ol>li:last-of-type {
+            color: #ed10ff;
+        } */
+    </style>
+<body>
+    <h1>私のサイトへようこそ！</h1>
+    <div>
+        <span>ーーー本サイトの内容ーーー</span>
+        <ol>        
+            <li>アイドル</li>
+            <li>IT勉強</li>
+            <li>音ゲー</li>
+                <span>音ゲーは主としてosu!、バンドリです。</span>
+            <li>FPS</li>
+        </ol>
+    </div>
+</body>
+</html>

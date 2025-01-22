@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>css_三大特性</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        h2 {
+            color: green;
+        }
+        /* text- font- line- colorなど、継承性があります */
+        div {
+            color: red;
+            font-size: 40px;
+            background-color: skyblue;
+        }
+        p {
+            color: purple;
+        }
+        /* 通配セレクターに通じて、継承していたスタイルの優先級の弱さが見られます */
+        /* * {
+            color: grey;
+        } */
+    </style>
+</head>
+<body>
+    <h2 id="site">私のサイトへようこそ！</h2>
+    <hr>
+    <div>
+        divの文字です
+        <span>spanの文字1です</span>
+        <span>spanの文字2です</span>
+        <span>spanの文字3です</span>
+        <p>
+            <span>spanの文字4です</span>
+        </p>
+    </div>
+</body>
+</html>

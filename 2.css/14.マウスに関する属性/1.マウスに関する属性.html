@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.マウスに関する属性</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            /* 注意点1：写真のサイズは16＊16から32＊32までです */
+            /* 注意点2：pointerという属性は必要です */
+            cursor: url("../写真/select2.png") , pointer;
+        }
+        button {
+            cursor: pointer;
+        }
+        input {
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        マウスを置いてみましょう！
+        <input type="text">
+        <a href="https://google.co.jp">グーグル</a>
+        <button>クリックしよう！</button>
+    </div>
+</body>
+</html>

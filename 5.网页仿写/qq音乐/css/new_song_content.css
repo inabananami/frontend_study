@@ -1,0 +1,129 @@
+/* 新歌首发 */
+.new_song_root_box {
+    background: url(../static/song_content_bac.jpg) 50% 0 repeat-x;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+/* 版心盒子 */
+.new_song_inner_box {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 标题2 */
+.new_song_title_box {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 24px;
+}
+.new_song_title {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    position: relative;
+    left: 520px;
+    top: -10px;
+    width: 196px;
+    height: 40px;
+}
+/* 全部播放图标 */
+.play_all_icon {
+    background: url(../static/small_icon_collection.png);
+    width: 13px;
+    height: 16px;
+    background-position: -60px -221px;
+    display: inline-block;
+}
+/* 全部播放超链接 */
+.play_all_link {
+    position:absolute;
+    left: 0;
+    top:100px;
+    border:1px solid #c9c9c9;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 6px;
+    padding:0 23px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    text-align: center;
+}
+.play_all_link:hover {
+    background-color: #ededed;
+    color: #333;
+}
+/* 新歌首发歌曲列表 */
+.new_song_cont_box {
+    overflow: hidden;
+    margin:11px -30px 10px 20px;
+}
+/* 新歌列表 */
+.newsong_cont_item_list {
+    display:inline-block;
+    width: 1209px;
+}
+/* 新歌物件 */
+.newsong_cont_item {
+    display: inline-block;
+    width:400px;
+}
+/* 物件盒子 */
+.cont_item_box {
+    position: relative;
+    height: 86px;
+    overflow: hidden;
+    border-top:1px solid #f2f2f2;
+    margin: -1px 30px 13px 0;
+    padding-top: 12px;
+    font-size: 14px;
+    line-height: 15px;
+}
+/* 封面盒子 */
+.cont_item_cover {
+    float: left;
+    width: 86px;
+    margin-right: 14px;
+    position: relative;
+    height:86px;
+    overflow: hidden;
+}
+/* 封面图片 */
+.item_cover_pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* 文本盒子 */
+.cont_item_text {
+    font-size: 14px;
+}
+/* 歌曲标题 */
+.cont_item_title {
+    max-width: 50%;
+    overflow: hidden;
+    padding: 21px 0 2px;
+}
+/* 作者 */
+.cont_item_anthor {
+    display: inline-block;
+    max-width: 50%;
+    overflow: hidden;
+    margin-top: 5px;
+}
+/* 作者颜色 */
+.item_anthor_color {
+    color: #999;
+}
+/* 歌曲时长 */
+.cont_item_time {
+    color: #999;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 86px;
+    font-weight: lighter;
+}

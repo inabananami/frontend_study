@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>偽クラスセレクター_目標偽クラス</title>
+    <style>
+        div {
+            background-color: pink;
+            height: 500px;
+        }
+        div:target {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="#one">一番目に行きます</a>
+    <a href="#two">二番目に行きます</a>
+    <a href="#three">三番目に行きます</a>
+    <a href="#four">四番目に行きます</a>
+    <a href="#five">五番目に行きます</a>
+    <a href="#six">六番目に行きます</a>
+
+    <div id="one">一番目</div>
+    <br>
+    <div id="two">二番目</div>
+    <br>
+    <div id="three">三番目</div>
+    <br>
+    <div id="four">四番目</div>
+    <br>
+    <div id="five">五番目</div>
+    <br>
+    <div id="six">六番目</div>
+</body>
+</html>

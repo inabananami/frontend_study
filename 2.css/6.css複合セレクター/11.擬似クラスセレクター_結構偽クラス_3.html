@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>偽クラスセレクター_結構偽クラス_3</title>
+    <style>
+        /* 選択したのは最後の第n個のp子要素です（すべての兄弟に基づきます）ーー　結構1を見る */
+        /* div>p:nth-last-child(3) {
+            color: red;
+        } */
+
+        /* 選択したのは最後の第n個のp子要素です（同類の兄弟に基づきます）ーー　結構1を見る */
+        div>p:nth-last-of-type(2) {
+            color: red;
+        }
+
+        /* 選択したのは兄弟がないspan要素です　ーー　結構2を見る */
+        /* span:only-child {
+            color: red;
+        } */
+
+        /* 選択したのは同類の兄弟がないspan要素です　ーー　結構2を見る */
+        /* span:only-of-type {
+            color: #ED7D95;
+        } */
+    
+        /* 選択したのはhtmlルート要素です */
+        :root {
+            background-color: rgb(219, 219, 219);
+        }
+
+        /* 選択したのは内容がないdiv要素です　ーー　結構3を見る */
+        div:empty {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        結構1
+        <span>テスト1</span>
+        <p>張三さん：98点</p>
+        <p>李四さん：90点</p>
+        <p>王五さん：85点</p>
+        <p>趙六さん：84点</p>
+        <p>孫七さん：80点</p>
+        <p>老八さん：75点</p>
+        <span>テスト2</span>
+    </div> -->
+
+    <!-- 結構2 -->
+    <div>
+        <span>テスト1</span>
+    </div>
+    <div>
+        <span>テスト2</span>
+        <p>張三さん：98点</p>
+        <p>李四さん：90点</p>
+        <p>王五さん：85点</p>
+        <p>趙六さん：84点</p>
+        <p>孫七さん：80点</p>
+        <p>老八さん：75点</p>
+    </div>
+
+    <!-- 結構3 -->
+    <!-- <div></div> -->
+</body>
+</html>

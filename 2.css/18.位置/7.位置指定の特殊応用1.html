@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>7.位置指定の特殊応用1</title>
+    <style>
+        .outer {
+            height: 400px;
+            background-color: #888;
+            position: relative;
+        }
+        .inner {
+            background-color: orange;
+            font-style: 20px;
+            padding: 20px;
+            border: 10px solid black;
+            position: absolute;
+            /* 絶対位置指定の場合は、父要素を満たしたら、left right と top bottomを利用できます */
+            left: 0;
+            right: 0;
+            
+            /* top: 0; */
+            /* bottom: 0; */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">こんにちは！</div>
+    </div>
+</body>
+</html>

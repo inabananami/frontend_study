@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>スタイルシートの優先級</title>
+    </head>
+
+    <!-- <style>は<link>の中の外部スタイルは優先順位があります-->
+    <!-- どれが後ろにあるなら、スタイルはそれに従うべきです -->
+    <!-- <link>と<style>部分の順位を換えてみると、変化を見えます -->
+    <style>
+        h1 {
+            color:aqua;
+        }
+    </style>
+    <link rel="stylesheet" href="../2.css/1.css的编写位置/ポジション3.css">
+    
+    <body>
+        <h1 style="color:pink">地球のみんな、ただいま！</h1>
+        <h1>小泉萌香役の三船栞子です</h1>
+    </body>
+</html>

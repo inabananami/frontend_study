@@ -1,0 +1,115 @@
+.banner_upper_root_box {
+    height: 36px;
+    border-bottom: 0.5px solid rgba(0,0,0,.2);
+}
+.banner_upper_inner_box {
+    height: 36px;
+    width: 1552px !important;
+    line-height: 36px;
+    margin: 0 auto;
+}
+.lft_cont {
+    width: 383.983px;
+    height: 36px;
+    line-height: 36px;
+    float: left;
+}
+.lft_cont::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.lft_cont_item {
+    float: left;
+}
+.lft_cont_item::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.item_spacing {
+    padding-left: 8px;
+    padding-right: 8px;    
+    color: #666;
+}
+.pos_link {
+    width: 110.283px;
+    height: 33.4px;
+    color: #666;
+    display: inline-block;
+}
+.icon_set {
+    border-top: 6px solid #666;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    display: inline-block;
+}
+.area_menu_container {
+    display: block;
+    width: 80px;
+    height: 130px;
+    padding: 16px;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+    left: 1px;
+    z-index: 21;
+}
+.area_menu_list>li {
+    text-align: center;
+    color: #fff;
+    width: 80px;
+    line-height: 22px;
+    font-size: 14px;
+    margin: 12px auto;
+}
+#cn_mainland {
+    background-color: #ff0f33;
+    border-radius: 4px;
+}
+.area_menu_item>a {
+    color: #505259;
+}
+.area_menu_item>a:hover {
+    color: #ff0f33;
+}
+.pos_link:hover .area_menu_container {
+    display: block;
+}
+.login_link {
+    float: left;
+    text-decoration: none;
+}
+.business_item {
+    margin-left: 10px;
+    color: #666;
+}
+.rit_cont {
+    float: right;
+    width: 718.533px;
+    height: 36px;
+    display: block;
+    line-height: 36px;
+}
+.rit_cont::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.rit_cont_item {
+    float: left;
+}
+.cart_link {
+    width: 75px;
+    height: 36px;
+}
+.cart_icon {
+    position: relative;
+    left:0;
+    top: 4px;
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background: url(../static/cart.png) no-repeat;
+}
