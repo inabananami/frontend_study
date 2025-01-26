@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>7.continueとbreak</title>
+  </head>
+  <body>
+    <script>
+        //例（前のものは4前のデータだけ出力しますが、最後のには5だけ出力しない）
+        let sum = 0;
+        for (let i = 0; i < 10; i++) {
+            if(i == 5) {
+                break;
+            }
+            document.write(i);
+        }
+        document.write("<br>");
+        for (let i = 0; i < 10; i++) {
+            if(i == 5) {
+                continue;
+            }
+            document.write(i);
+        }
+    </script>
+  </body>
+</html>
