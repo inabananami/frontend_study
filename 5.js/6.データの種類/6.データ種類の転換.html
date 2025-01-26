@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>6.データ種類の転換</title>
+</head>
+<body>
+    <script>
+        //暗黙の型変換(あんまくのかたへんかん)
+        document.write(1 + 1);
+        //これで1はstringへ転換した(暗黙の型変換)
+        document.write("pink" + 1);
+
+        document.write(2 + "2");
+        document.write("<br>");
+        document.write(2 - 2);
+        document.write("<br>");
+        
+        //算術演算子（さんじゅつえんざんし）がある場合は、全ての数字はnumber型に転換する
+        document.write(2 - "2");
+
+        //number型に転換するため、結果はnumberです
+        document.write(typeof +"100");
+        document.write("<br>");
+
+        //明示的変換。前には一〇〇一ですが、後には101です
+        document.write("100" + 1);
+        document.write("<br>");
+        document.write(Number("100") + 1);
+
+        document.write("<br>");
+        //整数以外のデータを除く
+        document.write(parseInt("100は整数です"));
+        document.write("<br>");
+        //浮動小数点数（ふどうしょうすうてんすう）以外のデータを除く
+        document.write(parseFloat("0.111は小数です"));
+        document.write("<br>");
+        //練習
+        //+を使うことで、number型へ転換する
+        let x = +prompt("一つの数を入力してください");
+        let y = +prompt("二つの数を入力してください");
+        alert("計算の結果は："+ Number(x + y));
+        </script>
+</body>
+</html>
