@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.if文</title>
+</head>
+<body>
+    <script>
+        let x = 1;
+        let y = 2;
+        //例1
+        if (x < y){
+            document.write("false");
+        }
+        document.write("<br>");
+
+        //例2
+        let a = 1;
+        let b = 2;
+        let c = 3;
+        if (a < b) {
+            if(b < c) {
+                document.write("cは最も大きい数です");
+            }
+        }
+        document.write("<br>");
+
+        //例3
+        let d = 90;
+        if(d > 100 || d< 0) {
+            document.write("点数が違いです。もう一度入力してください");
+        }
+        else if(d >= 90 && d<= 100) {
+            document.write("優秀です");
+        }
+        else if(d >= 80 && d< 90) {
+            document.write("良いです");
+        }
+        else if(d >= 71 && d< 80) {
+            document.write("やや良いです");
+        }
+        else if(d>= 60 && d< 70) {
+            document.write("合格です");
+        }
+        else {
+            document.write("次に頑張りましょう");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.インクリメント演算子</title>
+</head>
+<body>
+    <script>
+        //例
+        let x=1;
+        let y=2;
+        //前置インクリメント(ここのｘは2です)
+        document.write(++x);
+        document.write("<br>");
+        //後置インクリメント（ここのｙは4であり、ｘはやはり２です）
+        y+=x++;
+        //yのデータは4です
+        document.write(y);
+        document.write("<br>")
+        // ここのXはようやく3に増えた
+        document.write(x);
+    </script>
+</body>
+</html>
