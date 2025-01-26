@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>注文情報を入力と出力例</title>
+    <style>
+        table {
+            margin: 0 auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 800px;
+            height: 110px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px 15px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>注文支払い確認ページ</h2>
+    <script>
+        let price = +prompt("品物の価格を入力してください：");
+        let num = +prompt("品物の数を入力してください：");
+        let add = prompt("郵送先住所を入力してください：");
+        document.write(`
+            <table>
+                <thead>
+                    <tr>
+                        <th>品物の名称</th>
+                        <th>品物の価格</th>
+                        <th>品物の数</th>
+                        <th>合計金額</th>
+                        <th>郵送先住所</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>iPhone 15 Pro Max</td>
+                        <td>${price}円</td>
+                        <td>${num}</td>
+                        <td>${price * num}円</td>
+                        <td>${add}</td>
+                    </tr>
+                </tbody>
+            </table>
+        `);
+    </script>
+</body>
+</html>
