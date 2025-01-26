@@ -2,4 +2,4 @@
 
 This is a backup of front-end, welcome to studying together!
 
-これはフロントエンドのコートバックアップです。お互いの勉強は大歓迎です!
+これはフロントエンドのコードバックアップです。お互いの勉強は大歓迎です!
