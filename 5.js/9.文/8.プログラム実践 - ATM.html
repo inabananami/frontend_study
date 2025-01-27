@@ -6,13 +6,49 @@
     <title>Document</title>
 </head>
 <body>
-    <p>操作を選択してください：</p>
-    <p>1.</p>
-    <p></p>
-    <p></p>
-    <p></p>
     <script>
-        prompt(``)
+        let mode;
+        let input;
+        let output;
+        let search;
+        while(true) {
+            mode = +prompt(`
+            操作を選択してください：
+                1. お預け入れ
+                2. お引き出し
+                3. 残高を見る
+                4. キャンセル
+            `);
+            while (mode > 4 || mode < 0) {
+                mode = +prompt("エラーが発生しました。もう一度入力してください：");
+            }
+            if (mode == 4) {
+                alert("ご利用ありがとうございます！");
+                break;
+            }
+            switch (mode) {
+                case 1:
+                    input = +prompt("お預け入れの金額を確認してください：");
+                    while(input < 0) {
+                        input = +prompt("エラーが発生しました。もう一度入力してください：");
+                    }
+                    alert("ご利用ありがとうございます！");
+                    break;
+                case 2:
+                    output = +prompt("お引き出しの金額を確認してください：");
+                    if(output > input || input <= 0) {
+                        alert("残高が足りておりません。あなたの残高は："+input+"円でございます。");
+                    }
+                    else {
+                        input -= output;
+                        alert("完了致しました。お金を忘れないようにしてください。");
+                    }
+                    break;
+                case 3:
+                    alert("あなたの残高は："+input+"円でございます。");
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
