@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>10.ループされたループの練習</title>
+</head>
+<body>
+    <script>
+        //ユーザー入力機能を追加する
+        let row = +prompt("列数を入力してください：");
+        let line = +prompt("行数を入力してください：");
+        while(row <= 0) {
+            row = +prompt("エラーが発生しました。列数をもう一度入力してください：");
+        }
+        while(line <= 0) {
+            line = +prompt("エラーが発生しました。行数をもう一度入力してください：");
+        }
+        alert(`あなたが印刷したい星は${line}行${row}列です。`)
+        //5行5列の星を印刷する
+        for(let i = 0;i < row;i++) {
+            for(let j = 0;j < line; j++) {
+                document.write("★");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
