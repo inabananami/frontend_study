@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>8.総合例‐時間転換例</title>
+</head>
+<body>
+    <script>
+        function setTime() {
+            let time = 0;
+            time = parseInt(prompt(`秒数を入力してください：`));
+            let hour = parseInt(time / 3600);
+            let minute = parseInt((time - hour * 3600) / 60); 
+            let second = parseInt((time - hour * 3600 - minute * 60));
+            document.write(`${time}秒を${hour}時間${minute}分${second}秒に転換する。`);
+        }
+        setTime();
+    </script>
+</body>
+</html>

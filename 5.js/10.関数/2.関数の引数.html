@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.関数の引数</title>
+</head>
+<body>
+    <script>
+        function getSquare(num1 = 30) {
+            document.write(num1 * num1);
+            document.write("<br>");
+        }
+        function getSquare2(num1, num2) {
+            document.write(num1 * num2);
+            document.write("<br>");
+        }
+        getSquare();
+        getSquare(3);
+        getSquare2(3, 5);
+    </script>
+</body>
+</html>

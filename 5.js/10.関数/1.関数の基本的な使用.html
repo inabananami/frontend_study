@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>12.九九表を出力</title>
+    <title>1.関数</title>
     <style>
         div {
             display: inline-block;
@@ -21,13 +21,17 @@
 </head>
 <body>
     <script>
-        //逆三角形を印刷する
-        for(let i = 1; i <= 9; i++) {
-            for(let j = 1; j <= i;j++) {
-                document.write(`<div>${i}×${j}=${i * j}</div>`);
+        //九九表を出力コードを関数に含む
+        function print_nine_table(){
+            //逆三角形を印刷する
+            for(let i = 1; i <= 9; i++) {
+                for(let j = 1; j <= i;j++) {
+                    document.write(`<div>${i}×${j}=${i * j}</div>`);
+                }
+                document.write(`<br>`);
             }
-            document.write(`<br>`);
         }
+        print_nine_table();
     </script>
 </body>
 </html>

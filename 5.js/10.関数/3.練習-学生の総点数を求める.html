@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>3.練習-学生の総点数を求める</title>
+</head>
+<body>
+    <script>
+        function getScore(arr) {
+            let sum = 0;
+            for(let i = 0;i<arr.length;i++) {
+                sum += arr[i];
+            }
+            document.write(sum);
+        }
+        let arr = [45,50,70,90,100,99,80,76,92,82,77,40];
+        getScore(arr);
+    </script>
+</body>
+</html>
