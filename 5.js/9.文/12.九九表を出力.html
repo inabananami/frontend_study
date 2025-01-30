@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>12.九九表を出力</title>
+    <style>
+        div {
+            display: inline-block;
+            color: #fff;
+            font-weight: bold;
+            background-color: #ffd1db;
+            width: 100px;
+            height: 40px;
+            border: 2px solid pink;
+            margin: 1px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //逆三角形を印刷する
+        for(let i = 1; i <= 9; i++) {
+            for(let j = 0;j <= i;j++) {
+                document.write(`<div>${i}×${j}=${i * j}</div>`);
+            }
+            document.write(`<br>`);
+        }
+    </script>
+</body>
+</html>

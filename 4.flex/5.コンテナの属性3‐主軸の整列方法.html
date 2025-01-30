@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.コンテナの属性3‐主軸の整列方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bigbox {
+            width: 500px;
+            height: 500px;
+            border: 10px solid gray;
+            margin: 100px auto;
+            display: flex;
+            /* すべて中心になる */
+            /* justify-content: center; */
+            /* すべて周りになる */
+            /* justify-content: space-around; */
+            /* 主軸の両端で整列する */
+            /* justify-content: space-between; */
+            
+        }
+        .bigbox>div {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed red;
+        }
+    </style>
+</head>
+<body>
+    <!-- コンテナ -->
+    <div class="bigbox">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>3.配列の最大値と最小値</title>
+</head>
+<body>
+    <script>
+        //最大値と最小値を出力する
+        let num = new Array(2,6,1,77,52,25,7);
+        let max = num[0];
+        let min = num[0];
+        for(let i = 0; i < num.length - 1;i++) {
+                if(max < num[i]) {
+                    max = num[i]; 
+                }
+                else if(min > num[i]) {
+                    min = num[i];
+                }
+            }
+        document.write(max);
+        document.write(min);
+    </script>
+</body>
+</html>
