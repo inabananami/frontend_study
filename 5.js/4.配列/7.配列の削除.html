@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>7.配列の削除</title>
+</head>
+<body>
+    <script>
+        let arr = new Array(2,0,6,1,77,0,25,7);
+        //これは配列の最後の要素を削除する方法です
+        arr.pop();
+        document.write(arr);
+        document.write("<br>");
+        //これは配列の最初の要素を削除する方法です
+        arr.shift();
+        document.write(arr);
+        document.write("<br>");
+        //一つの属性は配列の位置であり、二つの属性は削除したい要素の数です
+        // arr.splice(start, 2);
+        arr.splice(3,2);
+        document.write(arr);
+    </script>
+</body>
+</html>

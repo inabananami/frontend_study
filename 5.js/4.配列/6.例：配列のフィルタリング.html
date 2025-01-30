@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>6.例：配列のフィルタリング</title>
+</head>
+<body>
+    <script>
+        let arr = new Array(2,0,6,1,77,0,25,7);
+        let new_arr = new Array();
+        for(let i = 0; i< arr.length; i++) {
+            if (arr[i] >= 10) {
+                new_arr.push(arr[i]);
+            }
+        }
+        document.write(arr);
+        document.write("<br>");
+        document.write(new_arr);
+    </script>
+</body>
+</html>

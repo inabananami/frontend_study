@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>4.配列を直す</title>
+</head>
+<body>
+    <script>
+        //配列を直すコードです
+        let num = new Array(2,6,1,77,52,25,7);
+        let result = "";
+        let x = 0;
+        alert(`numはこうなっています：${num}`);
+        x = +prompt(`直したい数の順番を入力してください`);
+        x = x - 1;
+        num2 = +prompt(`なおしたいの数を入力してください`);
+        num[x] = num2;
+        document.write(num);
+    </script>
+</body>
+</html>

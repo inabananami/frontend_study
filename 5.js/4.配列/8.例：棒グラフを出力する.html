@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>8.例：棒グラフを出力する</title>
+    <style>
+        /* .outer_box {
+            margin: 0 auto;
+            width: 700px;
+            height: 500px;
+            border-left: 2px solid pink;
+            border-bottom: 2px solid pink;
+        }
+        .bottom_box {
+            display: flex;
+            justify-content: center;
+            margin-left: 130px;
+            margin-top: 10px;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            margin-right: 75px;
+        }
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .data_pos {
+            position: relative;
+            margin-left: 44px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="outer_box">
+        <span class="data_pos">${first}</span>
+        <span class="data_pos">${second}</span>
+        <span class="data_pos">${third}</span>
+        <span class="data_pos">${fourth}</span>
+        <div class="item" style="margin-left: 55px;"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="bottom_box">
+        <span>第一四半期</span>
+        <span>第二四半期</span>
+        <span>第三四半期</span>
+        <span>第四四半期</span>
+    </div>
+    <script>
+        let num = new Array();
+        let first = +prompt(`第一四半期のデータを入力してください：`);
+        let second = +prompt(`第二四半期のデータを入力してください：`);
+        let third = +prompt(`第三四半期のデータを入力してください：`);
+        let fourth = +prompt(`第四四半期のデータを入力してください：`);
+        num.shift(first, second, third, fourth);
+        document.body.innerHTML += `
+        `;
+    </script>
+</body>
+</html>
