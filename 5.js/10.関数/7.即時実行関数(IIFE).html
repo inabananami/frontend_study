@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>7.即時実行関数(IIFE)</title>
+</head>
+<body>
+    <script>
+        //方法1
+        // (function() {console.log(11) })();
+        //方法2
+        // (function() {console.log(11) }());
+        //呼び出されなくて、まっすぐ実行
+
+        //使用例
+        //この場合は衝突（しょうとつ）がある
+        // let num = 10;
+        // let num = 20;
+        //この問題を防ぐためにIIFEを使う
+        (function(){
+            let num = 10
+        })();
+        (function(){
+            let num = 20
+        })();
+
+        //例2:
+        (function(x, y) {
+            console.log(x + y);
+        })(1, 5);
+    </script>
+</body>
+</html>
