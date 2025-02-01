@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.対象の追加、直し、削除、調べ</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: "前田さん",
+            genter: "male",
+            age: 50
+        }
+        
+        //追加
+        obj.hobby = "アイドル";
+        //調べ
+        document.write(obj.name);
+        document.write("<br>");
+        document.write(obj.hobby);
+        document.write("<br>");
+        //直し
+        obj.name = "上原さん";
+        document.write(obj.name);
+        document.write("<br>");
+        //削除
+        delete obj.age;
+        document.write(obj.age);
+</script>
+</body>
+</html> 
