@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>4.オブジェクトの走査</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            uname: "andy",
+            age: 18,
+            sex: "male"
+        }
+        //第一種の方法
+        for(let k in obj) {
+            document.write(k);
+            document.write(" ");
+            //kを大カッコに包まれなければならない
+            document.write(obj[k]);
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

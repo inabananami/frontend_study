@@ -7,7 +7,8 @@
 <body>
     <script>
         let obj = {
-            name: "前田さん",
+            name: "上原さん",
+            "person-name": "前田さん",
             genter: "male",
             age: 50
         }
@@ -18,6 +19,8 @@
         document.write(obj.name);
         document.write("<br>");
         document.write(obj.hobby);
+        document.write("<br>");
+        document.write(obj["person-name"]);
         document.write("<br>");
         //直し
         obj.name = "上原さん";
