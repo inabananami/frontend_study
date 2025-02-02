@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5.例-学生の情報表を出力</title>
+    <style>
+        table {
+            width: 700px;
+            height: 250px;
+            border: 2px solid #aaa;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        th {
+            border: 1px solid #aaa;
+            background-color: #eee;
+        }
+        td {
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let students = [
+            {name: "andy", age: 18, gender: "male", hometown: "US"},
+            {name: "eddie", age: 17, gender: "male", hometown: "UK"},
+            {name: "mike", age: 19, gender: "female", hometown: "AR"},
+            {name: "morgan", age: 22, gender: "female", hometown: "NZ"}
+        ]
+        document.write("<table>");
+        document.write(`
+                <thead>
+                    <th>番号</th>
+                    <th>氏名</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>故郷</th>
+                </thead>
+        `);
+            document.write(`<tbody>`)
+            for(let i = 0; i< students.length; i++) {
+                document.write(`<tr>`);
+                document.write(`<td>${i + 1}</td>`);
+                for(let k in students[i]) {
+                    document.write(`<td>${students[i][k]}</td>`);
+                }
+                document.write(`</tr>`);
+            }
+            document.write(`</tbody>`);
+        document.write("</table>");
+    </script>
+</body>
+</html>
