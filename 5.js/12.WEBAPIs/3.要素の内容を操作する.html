@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>3.要素の内容を操作する</title>
+</head>
+<body>
+    <div class="box">テスト内容です</div>
+    <script>
+        //1.要素を獲得する
+        const box = document.querySelector(".box");
+        //2.文字の内容を直す
+        console.log(box.innerText);  //文字の内容を獲得する
+        box.innerText = "直した文字です。";  //文字の内容を直す
+        box.innerHTML  = "<strong>立派な文字です</strong>"; //タグを解析するようになる
+    </script>
+</body>
+</html>
