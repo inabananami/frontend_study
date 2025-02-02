@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>9.random例2-数字を当てるゲーム</title>
+</head>
+<body>
+    <script>
+        let flag = 1;
+        while (flag == 1) {
+            let num = Math.floor(Math.random() * (9 + 1)) + 1;
+            console.log(num);
+            let guess = +prompt(`当てる数字を入力してください:`);
+            while (guess != num) {
+                if(guess > num) {
+                    guess = +prompt(`数字が大きすぎる。もう一度入力してください:`);
+                }
+                else if(guess < num) {
+                    guess = +prompt(`数値がを小さいすぎる。もう一度入力してください:`);
+                }
+            }
+            if(guess == num) {
+                    alert(`当たったね！おめでとう！`);
+            }
+            flag = +prompt(`1を推したら、もう一度プレイする；2を推すと、退出する`);
+        }
+    </script>
+</body>
+</html>
