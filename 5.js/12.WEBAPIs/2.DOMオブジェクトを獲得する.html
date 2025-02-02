@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.DOMオブジェクトを獲得する</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">124</div>
+    <div class="box">abc</div>
+    <p id="#nav">aabb</p>
+    <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+    </ul>
+    <script>
+        //cssを通じて、DOM要素を獲得する(""の中でcss選択器の文法を挿入する)
+        //この場合は一つのを要素選択する
+        const box = document.querySelector("div");
+        console.log(box);
+        const box2 = document.querySelector(".box");
+        console.log(box2);
+        const nav = document.querySelector("#nav");
+        console.log(nav);
+        //ulの一つのliを獲得する
+        const li = document.querySelector("ul li:first-child");
+        console.log(li);
+        //ピンク色に変わる
+        li.style.color = "#ED7D95";
+        //この場合は全ての要素を選択して、偽配列を作成する
+        const liall = document.querySelectorAll("li");
+        liall[1].style.color = "skyblue";
+        liall[2].style.color = "red";
+    </script>
+</body>
+</html>
