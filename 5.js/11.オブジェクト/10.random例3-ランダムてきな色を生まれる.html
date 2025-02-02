@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>10.random例3-ランダム的な色を生まれる</title>
+</head>
+<body>
+    <script>
+        function getRandomColor(flag) {
+            if(flag) {
+                let color = "#";
+                for(let i = 1; i <= 6; i++) {
+                    let random_color = Math.floor(Math.random() * 16);
+                    if(random_color < 10) {
+                        color += random_color;
+                    }
+                    else if(random_color >=10 && random_color <= 15) {
+                        switch(random_color) {
+                            case 10:
+                                random_color = "A";
+                                color += random_color;
+                                break;
+                            case 11:
+                                random_color = "B";
+                                color += random_color;
+                                break;
+                            case 12:
+                                random_color = "C";
+                                color += random_color;
+                                break;
+                            case 13:
+                                random_color = "D";
+                                color += random_color;
+                                break;
+                            case 14:
+                                random_color = "E";
+                                color += random_color;
+                                break;
+                            case 15:
+                                random_color = "F";
+                                color += random_color;
+                                break;
+                        }
+                    }
+                }
+            return color;
+            }
+            else {
+                let color2 = "rgb(";
+                for(let i = 1; i <= 3; i++) {
+                    let random_color2 = Math.floor(Math.random() * 256);
+                    color2 += random_color2;
+                    if (i < 3) {
+                        color2 += ", ";
+                    }
+                }
+                color2 += ")";
+            return color2;
+            }
+        }
+        document.write(getRandomColor(true));
+        document.write("<br>");
+        document.write(getRandomColor(false));
+        document.write(`<div style="height: 200px; width: 200px; background-color: ${getRandomColor(true)}"></div>`);
+        document.write(`<div style="height: 200px; width: 200px; background-color: ${getRandomColor(false)}"></div>`);
+    </script>
+</body>
+</html>
