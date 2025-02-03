@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>3.キーボードエベント</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector("input");
+        input.addEventListener("keydown", function() {
+            console.log(`keyboard push down.`);
+        });
+        input.addEventListener("keyup", function() {
+            console.log(`keyboard triggers up`);
+        });
+    </script>
+</body>
+</html>
