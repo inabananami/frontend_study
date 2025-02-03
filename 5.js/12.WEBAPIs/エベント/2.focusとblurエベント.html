@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>2.focusとblurエベント</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        const input = document.querySelector("input");
+        input.addEventListener("focus", function() {
+            console.log("focusが触発された");
+        })
+        input.addEventListener("blur", function() {
+            console.log("focusが失った");
+        })
+    </script>
+</body>
+</html>

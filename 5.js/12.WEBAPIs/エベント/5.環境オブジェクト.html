@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5.環境オブジェクト</title>
+</head>
+<body>
+    <button>click</button>
+    <script>
+        //それぞれの関数もthis　環境オブジェクトがある 普通の関数にはthisがwindowに指す
+        // function fn() {
+        //     console.log(this);
+        // }
+        // fn();
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", function() {
+            //buttonに指して、文字色を変える
+            this.style.color = "red";
+        });
+    </script>
+</body>
+</html>
