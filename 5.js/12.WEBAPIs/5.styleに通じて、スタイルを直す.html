@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5.styleに通じて、スタイルを直す</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        //1.要素を獲得する
+        const box = document.querySelector(".box");
+        //2.スタイル属性を直す　オブジェクト名.style.スタイル属性 = "データ"
+        box.style.width = "300px";
+        box.style.border = "2px solid red";
+        //cssの中でハイフンをつけている属性には、ローワーキャメルケースへ直す
+        box.style.backgroundColor = "skyblue";
+        box.style.borderTop = "3px dashed #EE7788";
+    </script>
+</body>
+</html>

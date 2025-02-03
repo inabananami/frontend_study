@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>8.ランダムカルーセル</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        .slider {
+            width: 560px;
+            height: 400px;
+            overflow: hidden;
+            margin: 10px auto;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px #888;
+        }
+        .slider-wrapper {
+            width: 100%;
+            height: 320px;
+        }
+        .slider-footer {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            z-index: 100;
+        }
+        .slider-footer .toggle {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            display: flex;
+        }
+        .slider-footer .toggle button {
+            margin-right: 12px;
+            width: 28px;
+            height: 28px;
+            appearance: none;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .slider-footer .toggle button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .slider-footer p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+            padding: 5px;
+        }
+        .slider-indicator {
+            position: relative;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            left: 7px;
+            top: 7px;
+        }
+        .slider-indicator li {
+            width: 8px;
+            height: 8px;
+            margin: 4px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.4;
+            cursor: pointer;
+        }
+        .slider-indicator li.active {
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slider-wrapper">
+            <img src="./画像/blue.png" alt="">
+        </div>
+        <div class="slider-footer">
+            <p>测试文本测试文本测试文本测试文本</p>
+            <ul class="active slider-indicator">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sliderData = [
+            {url: "./画像/pink.png", title: 'title_test_is_so_beautifully_nice!', color: "rgb(114,51,4)"},
+            {url: "./画像/gray.png", title: 'title_test_is_so!', color: "rgb(114,51,4)"},
+            {url:" ./画像/red.png", title: 'title_test_is', color: "rgb(114,51,4)"},
+            {url: "./画像/brown.png", title: 'title_test', color: "rgb(114,51,4)"},
+            {url: "./画像/yellow.png", title: 'title_test_is_so_beautifully!', color: "rgb(114,51,4)"},
+            {url: "./画像/blue.png", title: 'title_test_is_so_beauty!', color: "rgb(114,51,4)"},
+            {url: "./画像/green.png", title: 'title_test_is_so_beautiful!', color: "rgb(114,51,4)"},
+            {url: "./画像/purple.png", title: 'title!', color: "rgb(114,51,4)"}
+        ]
+        const random = Math.floor(Math.random() * sliderData.length);
+        console.log(sliderData[random]);
+        const img = document.querySelector(".slider-wrapper img");
+        img.src = sliderData[random].url;
+        const p = document.querySelector(".slider-footer p");
+        p.innerHTML = sliderData[random].title;
+        const footer = document.querySelector(".slider-footer");
+        footer.style.backgroundColor = sliderData[random].color;
+        const li = document.querySelector(`.slider-indicator li:nth-child(${random + 1})`);
+        li.classList.toggle('active');
+    </script>
+</body>
+</html>

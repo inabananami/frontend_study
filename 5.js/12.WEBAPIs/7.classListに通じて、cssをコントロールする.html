@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>7.classListに通じて、cssをコントロールする</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            color: pink;
+        }
+        .active {
+            color: red;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box active">222222</div>
+    <script>
+        const box = document.querySelector(".box");
+        // 新しいクラス名を追加する add() クラス名に点を加えない
+        // box.classList.add("active");
+        // クラス名を削除する remove() クラス名に点を加えない
+        // box.classList.remove("box");
+        //クラスを切り替える toggle() あるなら削除、ないなら加える
+        box.classList.toggle('active');
+    </script>
+    </script>
+</body>
+</html>
