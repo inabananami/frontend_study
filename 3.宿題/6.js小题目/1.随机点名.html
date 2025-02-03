@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.随机点名</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "思源黑体";
+        }
+        .big_box {
+            width: 600px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            border: 1px solid #999;
+            margin-top: 50px;
+            box-shadow: 3px 3px 10px #888;
+            border-radius: 15px;
+        }
+        .title {
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .question {
+            font-size: 26px;
+        }
+        .button_box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 35px;
+        }
+        .btn_pos {
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFF;
+            background-color: #ffaec0;
+            border-radius: 5px;
+            border: 1px solid #999;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="big_box">
+        <h3 class="title">随机点名</h3>
+        <div class="question"></div>
+        <div class="button_box">
+            <button id="button_start" class="btn_pos">开始</button>
+            <button id="button_over" class="btn_pos">结束</button>
+        </div>
+    </div>
+    <script>
+        let random_name;
+        const students = [
+            { id: "19930521", stu_name: "张伟" },
+            { id: "20011015", stu_name: "王芳" },
+            { id: "19890730", stu_name: "李强" },
+            { id: "20151208", stu_name: "刘洋" },
+            { id: "19981225", stu_name: "陈杰" },
+            { id: "20030618", stu_name: "杨帆" },
+            { id: "19941120", stu_name: "赵敏" },
+            { id: "20171005", stu_name: "黄磊" },
+            { id: "19860214", stu_name: "周涛" },
+            { id: "20090829", stu_name: "吴刚" },
+            { id: "19970207", stu_name: "张伟" },
+            { id: "20190311", stu_name: "王芳" },
+            { id: "19851230", stu_name: "李强" },
+            { id: "20040719", stu_name: "刘洋" },
+            { id: "19900923", stu_name: "陈杰" },
+            { id: "20160617", stu_name: "杨帆" },
+            { id: "19880326", stu_name: "赵敏" },
+            { id: "20111201", stu_name: "黄磊" },
+            { id: "19950509", stu_name: "周涛" },
+            { id: "20070113", stu_name: "吴刚" },
+            { id: "19891022", stu_name: "张伟" },
+            { id: "20180803", stu_name: "王芳" },
+            { id: "19930716", stu_name: "李强" },
+            { id: "20051228", stu_name: "刘洋" },
+            { id: "19981104", stu_name: "陈杰" },
+            { id: "20140915", stu_name: "杨帆" },
+            { id: "19870621", stu_name: "赵敏" },
+            { id: "20100210", stu_name: "黄磊" },
+            { id: "19960814", stu_name: "周涛" },
+            { id: "20080527", stu_name: "吴刚" },
+            { id: "19891212", stu_name: "张伟" },
+            { id: "20170323", stu_name: "王芳" },
+            { id: "19910505", stu_name: "李强" },
+            { id: "20021029", stu_name: "刘洋" },
+            { id: "19941011", stu_name: "陈杰" },
+            { id: "20130707", stu_name: "杨帆" },
+            { id: "19890419", stu_name: "赵敏" },
+            { id: "20150402", stu_name: "黄磊" },
+            { id: "19970609", stu_name: "周涛" },
+            { id: "20060918", stu_name: "吴刚" },
+            { id: "19880731", stu_name: "张伟" },
+            { id: "20191122", stu_name: "王芳" },
+            { id: "19921006", stu_name: "李强" },
+            { id: "20010117", stu_name: "刘洋" },
+            { id: "19931209", stu_name: "陈杰" },
+            { id: "20170124", stu_name: "杨帆" },
+            { id: "19860330", stu_name: "赵敏" },
+            { id: "20180708", stu_name: "黄磊" },
+            { id: "19950820", stu_name: "周涛" },
+            { id: "20091205", stu_name: "吴刚" }
+         ];
+        const name_board = document.querySelector(".question");
+        name_board.innerHTML = `${students[0].id}&nbsp;&nbsp;&nbsp;${students[0].stu_name}`; 
+        const btn_start = document.querySelector("#button_start");
+        const btn_over = document.querySelector("#button_over");
+        btn_start.addEventListener("click", function() {
+            random_name  = setInterval(function() {
+                const random = parseInt(Math.random() * students.length);
+                name_board.innerHTML = `${students[random].id}&nbsp;&nbsp;&nbsp;${students[random].stu_name}`; 
+            }, 35);
+        });
+        btn_over.addEventListener("click", function() {
+            clearInterval(random_name);
+        });
+    </script>
+</body>
+</html>

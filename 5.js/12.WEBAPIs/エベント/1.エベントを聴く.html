@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>1.エベントを聴く</title>
+</head>
+<body>
+    <button>wowowow</button>
+    <script>
+        const btn = document.querySelector("button");
+        btn.addEventListener("click",function() {
+            document.write(`<strong style="color: #DD0000;font-size: 300px;">危</strong>`);
+        })
+        btn.addEventListener("mouseover",function(){
+            btn.style.width = "300px";
+        })
+        btn.addEventListener("mouseout", function(){
+            btn.style.width = "100px";
+        })
+    </script>
+</body>
+</html>
