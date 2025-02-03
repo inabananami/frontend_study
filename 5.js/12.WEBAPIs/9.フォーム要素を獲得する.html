@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>9.フォーム要素を獲得する</title>
+</head>
+<body>
+    <!-- <input type="text" value="computer"> -->
+    <input type="checkbox">
+    <button>click</button>
+    <script>
+        //要素を獲得する
+        const uname = document.querySelector("input");
+        //データを獲得する　フォームデータを獲得するため　フォーム.valueを使う
+        console.log(uname.value);
+        console.log(uname.innerHTML);   //innerHTMLは獲得できない
+        // uname.value = "I want to buy PC"; //要素のデータが変える
+        console.log(uname.type);
+        // uname.type = "password"; //要素のタイプが変える
+        
+        //要素を獲得する
+        const ipt = document.querySelector("input");
+        console.log(ipt.checked);
+        ipt.checked = true;
+
+        //獲得する
+        const button = document.querySelector("button");
+        console.log(button.disabled);
+        button.disabled = true;
+    </script>
+</body>
+</html>

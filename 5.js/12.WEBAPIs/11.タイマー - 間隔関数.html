@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>11.タイマー - 間隔関数</title>
+</head>
+<body>
+
+    <script>
+        //タイマーを開ける
+        //1
+        setInterval(function(){
+            console.log(`1s per time`);
+        }, 1000);
+        //2
+        function fn() {
+            console.log(`1s per time`);
+        }
+        setInterval(fn(),1000);
+
+        //タイマーをクリアする
+        const x = setInterval(fn(),2000);
+        clearInterval(x);
+    </script>
+</body>
+</html>
