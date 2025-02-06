@@ -1,145 +1,3 @@
-## 3）随机点名
-### 1. 代码实现
-代码如下：
-```css
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "思源黑体";
-        }
-        .big_box {
-            width: 600px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
-            border: 1px solid #999;
-            margin-top: 50px;
-            box-shadow: 3px 3px 10px #888;
-            border-radius: 15px;
-        }
-        .title {
-            margin-top: 5px;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-        .name_box {
-            font-size: 26px;
-        }
-        .button_box {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-            margin-top: 35px;
-        }
-        .btn_pos {
-            width: 100px;
-            height: 40px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #FFF;
-            background-color: #ffaec0;
-            border-radius: 5px;
-            border: 1px solid #999;
-            cursor: pointer;
-        }
-```
-```html
-    <div class="big_box">
-        <h3 class="title">随机点名</h3>
-        <div class="name_box"></div>
-        <div class="button_box">
-            <button id="button_start" class="btn_pos">开始</button>
-            <button id="button_over" class="btn_pos">结束</button>
-        </div>
-        <a href="./static/随机点名_视频.mp4" style="color: #ffaec0">演示视频点这里</a>
-    </div>
-```
-```js
-    let random_name;
-    const students = [
-        { id: "19930521", stu_name: "张伟" },
-        { id: "20011015", stu_name: "王芳" },
-        { id: "19890730", stu_name: "李强" },
-        { id: "20151208", stu_name: "刘洋" },
-        { id: "19981225", stu_name: "陈杰" },
-        { id: "20030618", stu_name: "杨帆" },
-        { id: "19941120", stu_name: "赵敏" },
-        { id: "20171005", stu_name: "黄磊" },
-        { id: "19860214", stu_name: "周涛" },
-        { id: "20090829", stu_name: "吴刚" },
-        { id: "19970207", stu_name: "张伟" },
-        { id: "20190311", stu_name: "王芳" },
-        { id: "19851230", stu_name: "李强" },
-        { id: "20040719", stu_name: "刘洋" },
-        { id: "19900923", stu_name: "陈杰" },
-        { id: "20160617", stu_name: "杨帆" },
-        { id: "19880326", stu_name: "赵敏" },
-        { id: "20111201", stu_name: "黄磊" },
-        { id: "19950509", stu_name: "周涛" },
-        { id: "20070113", stu_name: "吴刚" },
-        { id: "19891022", stu_name: "张伟" },
-        { id: "20180803", stu_name: "王芳" },
-        { id: "19930716", stu_name: "李强" },
-        { id: "20051228", stu_name: "刘洋" },
-        { id: "19981104", stu_name: "陈杰" },
-        { id: "20140915", stu_name: "杨帆" },
-        { id: "19870621", stu_name: "赵敏" },
-        { id: "20100210", stu_name: "黄磊" },
-        { id: "19960814", stu_name: "周涛" },
-        { id: "20080527", stu_name: "吴刚" },
-        { id: "19891212", stu_name: "张伟" },
-        { id: "20170323", stu_name: "王芳" },
-        { id: "19910505", stu_name: "李强" },
-        { id: "20021029", stu_name: "刘洋" },
-        { id: "19941011", stu_name: "陈杰" },
-        { id: "20130707", stu_name: "杨帆" },
-        { id: "19890419", stu_name: "赵敏" },
-        { id: "20150402", stu_name: "黄磊" },
-        { id: "19970609", stu_name: "周涛" },
-        { id: "20060918", stu_name: "吴刚" },
-        { id: "19880731", stu_name: "张伟" },
-        { id: "20191122", stu_name: "王芳" },
-        { id: "19921006", stu_name: "李强" },
-        { id: "20010117", stu_name: "刘洋" },
-        { id: "19931209", stu_name: "陈杰" },
-        { id: "20170124", stu_name: "杨帆" },
-        { id: "19860330", stu_name: "赵敏" },
-        { id: "20180708", stu_name: "黄磊" },
-        { id: "19950820", stu_name: "周涛" },
-        { id: "20091205", stu_name: "吴刚" }
-        ];
-    const name_board = document.querySelector(".name_box");
-    const btn_start = document.querySelector("#button_start");
-    const btn_over = document.querySelector("#button_over");
-    name_board.innerHTML = `${students[0].id}&nbsp;&nbsp;&nbsp;${students[0].stu_name}`; 
-    btn_start.addEventListener("click", function() {
-        random_name  = setInterval(function() {
-            const random = parseInt(Math.random() * students.length);
-            name_board.innerHTML = `${students[random].id}&nbsp;&nbsp;&nbsp;${students[random].stu_name}`; 
-        }, 35);
-    });
-    btn_over.addEventListener("click", function() {
-        clearInterval(random_name);
-    });
-```
-### 2.实现原理
-- 第一步：先定义学生类数组和定时器名称
-- 第二步：选中显示部分盒子，开始按钮和结束按钮，并创建DOM类
-- 第三步：默认显示第一位同学的学号和姓名
-- 第四步：给开始按钮创建事件监听对象
-- 第五步：当点击开始按钮后，设定时器，函数为随机生成一个数，将这个数字对应的学生类数组元素替换到显示盒子上，每35毫秒执行一次，故实现滚动效果。
-- 第六步：给结束按钮创建事件监听对象
-- 第七步：当点击结束按钮的时候，清除上述计时器，停止滚动，显示最终学生学号姓名
-### 3. 视频演示
-[外部链接](https://github.com/inabananami/frontend_study/blob/main/3.%E5%AE%BF%E9%A1%8C/6.js%E5%B0%8F%E9%A2%98%E7%9B%AE/static/%E9%9A%8F%E6%9C%BA%E7%82%B9%E5%90%8D_%E8%A7%86%E9%A2%91.mp4)
-## 12）轮播图
-### 1. 代码实现
-```css
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -165,7 +23,7 @@
             position: relative;
             flex-direction: column;
             align-items: center;
-            height: 500px;
+            height: 510px;
             min-width:1200px;
             margin-top: 100px;
             overflow: hidden;
@@ -183,16 +41,16 @@
             height: 480px;
             margin: 15px;
             overflow: hidden;
+            box-shadow: 10px 5px 10px #aaa;
+            border-radius: 20px;
         }
         .img_and_text_box img  {
             width: 800px;
             height: 480px;
-            border-radius: 20px;
         }
         .text_box {
             position: relative;
             bottom: 157px;
-            border-radius: 0 0 20px 20px;
             width: 800px;
             height: 150px;
             background-color: #6669;
@@ -389,7 +247,6 @@
                 else {
                     trans.style.transform = `translateX(${-830 * j}px)`;
                 }
-                console.log(`dot j:${j}`);
             }
             //箭头浮现
             function array_appear() {
@@ -402,8 +259,7 @@
                 right_array.style.opacity = 0;
             }
             //自动设置long_box
-            console.log((array_spot.length - 3) * 830),
-            trans.style.left = `${(array_spot.length - 5.5) * 830}px`;
+            trans.style.left = `${(array_spot.length - 1) * 415}px`;
             /* 调用上述函数 */
             left_array.addEventListener("click",left_slide);
             right_array.addEventListener("click",right_slide);
@@ -433,17 +289,3 @@
     </div>
 </body>
 </html>
-```
-### 2. 原理说明
-- 主要功能：可以自动设置图片偏移量，自动算移动量，程序复用性高。
-- 原理：
- 1. 长盒子偏移量公式 = `(spot_array.length - 1)\*415px`，因为我们要让第一张图片居中，就得让图片向右移动一半的位置。
- 2. 封装小红点动作至`dot_pos(j)`,意思为：清除其他dot样式，然后将对应的小红点加上active类名。
- 3. **左箭头原理**：当j（图片下标）不为0时，则j--，translatex中的像素为`(-830 \* j)px`；当j为0时，则图片直接移动`(-830 \* (j + spot_array.length - 1))px`，即图片末尾。动画为`translate 0.5s ease-in-out`。
- 4. **右箭头的原理**比较简单：当j为`array_spot.length - 1`时，直接让长盒子回到原点（0px）；其他情况则移动`(-830 \* j)px`。
- 5. 小圆点 **(dot(i)函数)** 则使用了类似于右滑的原理：先加上dot_pos(j)函数。当点击到第(i+1)个小圆点时，先将这个小圆点的信息更新给j，然后将长盒子的位置移动到j对应的图片位置，即还是`(-830 \* j)px`。
- 6. 左右箭头默认为消失状态`opacity: 0`,`array_appear()`状态即修改两个箭头到`opacity: 1`,动画为`opacity 0.3s ease-in-out`。
- 7. 依次给左右array加上`click`事件，套上`left_slide`和`right_slide`函数。使用for循环遍历小圆点数组，执行dot(i)函数。
- 8. 默认设定定时器，套上`right_slide`函数
- 9. 给`.carsel_inner_box`加上`mouseover`与`mouseleave`事件，前者清除计时器，再调用`array_appear()`,后者先清除计时器再定义与之前相同的计时器，然后再让箭头消失。
- 10. 小圆点原理同上，只不过不需要控制箭头的出现与消失。
