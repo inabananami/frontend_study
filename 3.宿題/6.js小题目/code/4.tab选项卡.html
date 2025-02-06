@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>4.tab选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .root_box {
+            height: 310px;
+        }
+        .inner_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #EEE;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px #bbb;
+        }
+        .text_box {
+            width: 580px;
+            height: auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .text_box span {
+            display: inline-block;
+            width: 80px;
+            height: auto; 
+            text-align: center;
+        }
+        .text_box span:nth-child(2) {            
+            margin-left: 20px;
+        }
+        .text_box span:nth-child(3) {            
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .active {
+            color: #ff0000;
+            border-bottom: 3px solid rgb(255, 72, 72);
+        }
+        .content_box {
+            width: 500px;
+            height: 300px;
+            border: 2px solid #999;
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .content_box p {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root_box">
+        <div class="inner_box">
+            <div class="text_box">
+                <span class="active">英雄联盟</span>
+                <span>DOTA</span>
+                <span>风暴英雄</span>
+                <span>300英雄</span>
+            </div>
+            <div class="content_box">
+                <p>
+                    英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟
+                    英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟
+                    英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟
+                    英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟
+                    英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const content_array = [
+            {name: "英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟英雄联盟"},
+            {name: "刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔刀塔"},
+            {name: "风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄风暴英雄"},
+            {name: "300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄300英雄"}
+        ]
+        const span_tab = document.querySelectorAll(".text_box span");
+        const p_tab = document.querySelector(".content_box p");
+
+        function span_pos(i) {
+                span_tab.forEach(spot => spot.className = "");
+                span_tab[i].className = "active";
+        }
+        for(let i = 0; i < span_tab.length; i++) {
+            span_tab[i].addEventListener("mouseover",function() {
+                span_pos(i);
+                p_tab.innerHTML = content_array[i].name;
+            });
+        }
+    </script>
+</body>
+</html>
