@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>6.电子时钟</title>
+    <style>
+        * {
+            font-family: "汉仪正圆";
+            margin: 0;
+            padding: 0;
+        }
+        .root_box {
+            display: flex;
+            height: 600px;
+            align-items: center;
+        }
+        .inner_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            height: 350px;
+            margin:0 auto;
+            background: linear-gradient(rgba(210,210,210,0.6), rgba(210,210,210,0.6)),url(../img/ayumu3.1.jpg) no-repeat;
+            background-size: 600px auto;
+            backface-visibility: 0.5;
+            border: 5px solid #ffa2b6;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px #aaa;
+            overflow: hidden;
+        }
+        .inner_box h2 {
+            font-weight: 1000;
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        .inner_box div {
+            font-size: 35px;
+            color: #fff;
+            font-weight: 600;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="root_box">
+        <div class="inner_box">
+            <h2>电子时钟</h2>
+            <div></div>
+        </div>
+    </div>
+    <script>
+        let time;
+        const time_board = document.querySelector(".inner_box div");
+        setInterval(function(){
+            time = new Date();
+            time_board.innerHTML = `北京时间：${time.getHours()}时${time.getMinutes()}分${time.getSeconds()}秒`;
+        },1);
+    </script>
+</body>
+</html>
