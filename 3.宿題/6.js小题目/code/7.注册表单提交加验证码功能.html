@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>7.注册表单提交加验证码功能</title>
+    <style>
+        .spacer {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex button {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        昵称：<input type="text">
+        <div class="spacer"></div>
+        姓名：<input type="text">
+        <div class="spacer"></div>
+        QQ：<input type="text">
+        <div class="spacer"></div>
+        手机号：<input type="text">
+        <div class="spacer"></div>
+        邮箱：<input type="text">
+        <div class="spacer"></div>
+        密码：<input type="password">
+        <div class="spacer"></div>
+        确认密码：<input type="password">
+        <div class="spacer"></div>
+        <div class="flex">
+            验证码：<input type="number">
+            <button>发送验证码</button>
+        </div>
+        <div class="spacer"></div>
+        <div class="btn_box">
+            <button>提交</button>
+            <button>重置</button>
+        </div>
+    </form>
+    <script>
+        const placeHolder = [ "请输入昵称", "请输入姓名", "请输入QQ", "请输入手机号", "请输入邮箱", "请输入密码", "请确认密码", "请输入验证码"];
+        let timer;
+        let password_test = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
+        const code = document.querySelector(".flex button");
+        const placeHold = document.querySelectorAll("input");
+        const handIn = document.querySelector(".btn_box button:nth-child(1)");
+        const reset = document.querySelector(".btn_box button:nth-child(2)");
+        //placeholder浮现与消失
+        for(let i = 0; i < placeHold.length; i++) {
+            placeHold[i].placeholder = placeHolder[i];
+            placeHold[i].addEventListener("focus", function() {
+                placeHold[i].placeholder = "";
+            });
+            placeHold[i].addEventListener("blur", function() {
+                placeHold[i].placeholder = placeHolder[i];
+            });
+        }
+        //发送验证码功能
+        code.addEventListener("click", function() {
+            code.disabled = true;
+            let sec = 61;
+            timer = setInterval(function() {
+                sec--;
+                code.innerHTML = `${sec}s`;
+                if(sec == 0) {
+                    clearInterval(timer);
+                    code.innerHTML = `发送验证码`;
+                    code.disabled = false;
+                }
+            }, 1000);
+        });
+        //提交后检查输入内容
+        handIn.addEventListener("click", function() {
+            let data = +prompt("确认提交吗？输入1确认提交，输入2取消提交：");
+            while(data != 1 && data != 2) {
+                data = +prompt("输入错误，请重新输入：");
+           }
+           if(data == 1) {
+                //阻止默认事件发生
+                if(code.disabled == false) {
+                    alert("请先获取验证码！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(placeHold[0].value.length > 10) {
+                    alert("昵称字数应小于等于10个！");
+                    event.preventDefault();
+                    return false;
+                 }
+                else if(placeHold[1].value.length > 4) {
+                    alart("姓名字数应小于等于4个！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(placeHold[2].value.length > 10 || placeHold[2].value.length <= 5) {
+                    alert("qq号应大于5位小于等于10位！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(placeHold[3].value.length != 11) {
+                    alert("应为11位的手机号！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(!password_test.test(placeHold[5].value)  || !password_test.test(placeHold[6].value)) {
+                    alert("密码不由字母和数字组成！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(placeHold[5].value != placeHold[6].value) {
+                    alert("密码与确认密码不一致！");
+                    event.preventDefault();
+                    return false;
+                }
+                else if(placeHold[7].value != "0505") {
+                    alert("输入验证码不正确！");
+                    event.preventDefault();
+                    return false;
+                }
+                else {
+                    alert("提交成功！");
+                    return true;
+                }
+           }
+           else {
+                //阻止默认事件发生
+                event.preventDefault();
+                alert(`取消提交！`);
+                return false;
+           }
+        });
+        //重置功能
+        reset.addEventListener("click",function(event) { 
+           let data = +prompt("确认重置吗？输入1确认重置，输入2取消重置：");
+           while(data != 1 && data != 2) {
+                data = +prompt("输入错误，请重新输入：");
+           }
+           if(data == 2) {
+                //阻止默认事件发生
+                event.preventDefault();
+                alert(`取消重置！`);
+                return false;
+           }
+           else {
+                alert("重置成功！");
+                return true;
+           }
+        });
+    </script>
+</body>
+</html>
