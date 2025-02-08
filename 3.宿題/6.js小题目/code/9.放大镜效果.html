@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>9.放大镜效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .root_box {
+            height: 500px;
+        }
+        .inner_box {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .inner_box img {
+            width: 600px;
+            height: auto;
+        }
+        .lens {
+            display: none;
+            position: absolute;
+            pointer-events: none;
+            overflow: hidden;
+            top: 1px;
+            left: 1px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgb(255, 208, 0);
+        }
+        .lens img{
+            position: absolute;
+            top: 1px;
+            left: -10px;
+            width: 1440px;
+            height: 1016px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root_box">
+        <div class="inner_box">
+            <img src="../img/ayumu3.1.jpg">
+        </div>
+        <div class="lens">
+            <img src="../img/ayumu3.1.jpg">
+        </div>
+    </div>
+    <script>
+        const img_over = document.querySelector(".inner_box img");
+        const lens = document.querySelector(".lens");
+        const lens_img = document.querySelector(".lens img");
+
+        img_over.addEventListener("mousemove", function(e) {
+            lens.style.display = "block";
+            //offsetHeight与offsetWidth为获取放大镜的高度与宽度
+                let x = e.clientX - lens.offsetHeight / 2;
+                let y = e.clientY - lens.offsetWidth / 2;
+                lens.style.left = `${x}px`;
+                lens.style.top = `${y}px`;
+                // console.log((-e.clientX + 616) * 2.88);
+                // console.log((-e.clientY + 8) * 2.4);
+                lens_img.style.left = `${(-e.clientX + 639) * 2.4}px`;
+                lens_img.style.top = `${(-e.clientY + 32) * 2.4}px`;
+        });
+        img_over.addEventListener("mouseleave", function() {
+            lens.style.display = "none"
+        })
+    </script>
+</body>
+</html>
