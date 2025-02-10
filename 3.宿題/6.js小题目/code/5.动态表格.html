@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>5.动态表格</title>
+    <style>
+        .root_box {
+            display: flex;
+        }
+        table, tr, td, th { 
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table {
+            width: 600px;
+            height: 500px;
+        }
+        tbody tr:nth-child(2n - 1) td{
+            color: black;
+            background-color: #fff;
+        }
+        /* （这颜色太不吉利了吧） */
+        tbody tr:nth-child(2n) td {
+            color: #fff;
+            background-color: #000;
+        }
+        .add_btn {
+            width: 100px;
+            height: 30px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root_box">
+        <table>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>二级学院</th>
+                    <th>班级</th>
+                    <th>专业</th>
+                    <th>辅导员</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>24230201</td>
+                    <td>人名1</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button >删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230202</td>
+                    <td>人名2</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230203</td>
+                    <td>人名3</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230204</td>
+                    <td>人名4</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230205</td>
+                    <td>人名5</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230206</td>
+                    <td>人名6</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230207</td>
+                    <td>人名7</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230208</td>
+                    <td>人名8</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230209</td>
+                    <td>人名9</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24230210</td>
+                    <td>人名10</td>
+                    <td>女</td>
+                    <td>计算机工程学院</td>
+                    <td>242302</td>
+                    <td>软件工程</td>
+                    <td>李李四</td>
+                    <td id="btn">
+                        <button>删除当前行</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="add_btn">添加学生</button>
+    </div>
+    <script>
+        const tableRow = document.querySelectorAll("tbody tr");
+        const btn = document.querySelectorAll("#btn button");
+        const add_btn = document.querySelector(".add_btn");
+        const add_table = document.querySelector("tbody");
+        let flag = 0;
+        add_btn.addEventListener("click", function() {
+            let id, name, sex, college, classroom, pro, teacher;
+            id = +prompt("请输入学号：");
+            name = prompt("请输入姓名：");
+            sex = prompt("请输入性别：");
+            college = prompt("请输入二级学院：");
+            classroom = +prompt("请输入班级：");
+            pro = prompt("请输入专业：");
+            teacher = prompt("请输入辅导员：");
+            const new_Row = document.createElement("tr");
+            add_table.innerHTML += `
+                    <td>${id}</td>
+                    <td>${name}</td>
+                    <td>${sex}</td>
+                    <td>${college}</td>
+                    <td>${classroom}</td>
+                    <td>${pro}</td>
+                    <td>${teacher}</td>
+                    <td id="btn">
+                        <button class="delete-btn">删除当前行</button>
+                    </td>
+            `
+            add_table.appendChild(newRow);
+
+            const add_table_btn = document.querySelectorAll(".delete-btn");
+            add_table_btn.addEventListener("click", function() {
+                flag = +prompt("确认删除当前行吗？按1删除，按0不删除：");
+                if(flag == 0) {
+                    alert(`已取消删除！`);
+                    event.preventDefault();
+                }
+                else {
+                    //全部删除，包括tr
+                    tableRow[i].remove();
+                    alert(`已删除！`);
+                }
+            });
+        });
+        for(let i = 0; i < btn.length; i++) {
+            btn[i].addEventListener("click", function() {
+                flag = +prompt("确认删除当前行吗？按1删除，按0不删除：");
+                if(flag == 0) {
+                    alert(`已取消删除！`);
+                    event.preventDefault();
+                }
+                else {
+                    //全部删除，包括tr
+                    tableRow[i].remove();
+                    alert(`已删除！`);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
