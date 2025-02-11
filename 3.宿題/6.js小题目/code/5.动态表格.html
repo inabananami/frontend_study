@@ -172,11 +172,25 @@
         <button class="add_btn">添加学生</button>
     </div>
     <script>
-        const tableRow = document.querySelectorAll("tbody tr");
-        const btn = document.querySelectorAll("#btn button");
         const add_btn = document.querySelector(".add_btn");
-        const add_table = document.querySelector("tbody");
-        let flag = 0;
+        const tbody= document.querySelector("tbody");
+        tbody.addEventListener("click", function(e) {
+            if(e.target.tagName.toLowerCase() == "button") {
+                const flag = +prompt("确认删除当前行吗？按1删除，按0不删除：");
+                if(flag == 0) {
+                    alert(`已取消删除！`);
+                    event.preventDefault();
+                }
+                else {
+                    //找到最近的tr删除
+                    const tr = e.target.closest("tr");
+                    if(tr) {
+                        tr.remove();
+                        alert(`已删除！`)
+                    }
+                }
+            }
+        });
         add_btn.addEventListener("click", function() {
             let id, name, sex, college, classroom, pro, teacher;
             id = +prompt("请输入学号：");
@@ -186,49 +200,22 @@
             classroom = +prompt("请输入班级：");
             pro = prompt("请输入专业：");
             teacher = prompt("请输入辅导员：");
-            const new_Row = document.createElement("tr");
-            add_table.innerHTML += `
-                    <td>${id}</td>
-                    <td>${name}</td>
-                    <td>${sex}</td>
-                    <td>${college}</td>
-                    <td>${classroom}</td>
-                    <td>${pro}</td>
-                    <td>${teacher}</td>
-                    <td id="btn">
-                        <button class="delete-btn">删除当前行</button>
-                    </td>
-            `
-            add_table.appendChild(newRow);
-
-            const add_table_btn = document.querySelectorAll(".delete-btn");
-            add_table_btn.addEventListener("click", function() {
-                flag = +prompt("确认删除当前行吗？按1删除，按0不删除：");
-                if(flag == 0) {
-                    alert(`已取消删除！`);
-                    event.preventDefault();
-                }
-                else {
-                    //全部删除，包括tr
-                    tableRow[i].remove();
-                    alert(`已删除！`);
-                }
-            });
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>${sex}</td>
+                <td>${college}</td>
+                <td>${classroom}</td>
+                <td>${pro}</td>
+                <td>${teacher}</td>
+                <td id="btn">
+                    <button>删除当前行</button>
+                </td>
+            `;
+            //直接可以添加新表格行到tbody中，无需重载表格
+            tbody.appendChild(newRow);
         });
-        for(let i = 0; i < btn.length; i++) {
-            btn[i].addEventListener("click", function() {
-                flag = +prompt("确认删除当前行吗？按1删除，按0不删除：");
-                if(flag == 0) {
-                    alert(`已取消删除！`);
-                    event.preventDefault();
-                }
-                else {
-                    //全部删除，包括tr
-                    tableRow[i].remove();
-                    alert(`已删除！`);
-                }
-            });
-        }
     </script>
 </body>
 </html>
