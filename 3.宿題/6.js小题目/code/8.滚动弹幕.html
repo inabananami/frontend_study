@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>8.滚动弹幕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bacgr_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: pink;
+        }
+        .container_box {
+            width: 1200px;
+            height: 700px;
+        }
+        .input_bacc_box {
+            display: flex;
+            min-width: 1200px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255,255,255,0.7);
+        }
+        .input_box {
+            display: flex;
+            width: 300px;
+            height: 30px;
+            margin-bottom: 10px;
+            opacity: 0.3;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .input_box input {
+            width: 250px;
+        }
+        .input_box button {
+            width: 50px;
+        }
+        .new_div {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="bacgr_box">
+        <div class="container_box"></div>
+        <div class="input_bacc_box">
+            <div class="input_box">
+                <input type="text">
+                <button>发送</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const input_bacc = document.querySelector(".input_bacc_box");
+        const input_box = document.querySelector(".input_box");
+        const input_cont = document.querySelector(".input_box input");
+        const btn = document.querySelector(".input_box button");
+        const cont_box = document.querySelector(".container_box");
+        //随机颜色
+        function getRandomColor(flag) {
+            if(flag) {
+                let color = "#";
+                for(let i = 1; i <= 6; i++) {
+                    let random_color = Math.floor(Math.random() * 16);
+                    if(random_color < 10) {
+                        color += random_color;
+                    }
+                    else if(random_color >=10 && random_color <= 15) {
+                        switch(random_color) {
+                            case 10:
+                                random_color = "A";
+                                color += random_color;
+                                break;
+                            case 11:
+                                random_color = "B";
+                                color += random_color;
+                                break;
+                            case 12:
+                                random_color = "C";
+                                color += random_color;
+                                break;
+                            case 13:
+                                random_color = "D";
+                                color += random_color;
+                                break;
+                            case 14:
+                                random_color = "E";
+                                color += random_color;
+                                break;
+                            case 15:
+                                random_color = "F";
+                                color += random_color;
+                                break;
+                        }
+                    }
+                }
+            return color;
+            }
+        }
+       
+        btn.addEventListener("click", function() {
+            console.log(input_cont.value);
+            const random_top = Math.floor(Math.random() * 400) + 100;
+            const random_font_size = Math.floor(Math.random() * 25) + 15;
+            
+            const new_cont = document.createElement("div");
+            new_cont.innerHTML = input_cont.value;
+            new_cont.classList.add("new_div");
+            new_cont.style.color = getRandomColor(true);
+            new_cont.style.top = `${random_top}px`;
+            new_cont.style.left = `10px`;
+            new_cont.style.fontSize = `${random_font_size}px`;
+            cont_box.appendChild(new_cont);
+
+            //css3动画
+            new_cont.style.transition = "transform 7s linear";
+            new_cont.getBoundingClientRect();
+            new_cont.style.transform = "translateX(2100px)";
+
+            new_cont.addEventListener("transitionend", function() {
+                new_cont.remove();
+            });
+        });
+        input_bacc.addEventListener("mouseover", function() {
+            input_box.style.opacity = "1";
+        });
+        input_bacc.addEventListener("mouseleave", function() {
+            input_box.style.opacity = "0.3";
+        });
+    </script>
+</body>
+</html>
