@@ -4,13 +4,73 @@
     <meta charset="UTF-8">
     <title>1.页面返回顶部</title>
     <style>
-        
+        .inner_box {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: pink;
+            padding: 20px;
+        }
+        .button {
+            display: none;
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            right: 10px;
+            bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #EEE;
+        }
+        .button:active {
+            background-color: #DDD;
+        }
+        .blue_box {
+            background-color: skyblue;
+            width: 500px;
+            height: 500px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-
+    <div class="root_box">
+        <div class="inner_box">
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+            <div class="blue_box"></div>
+        </div>
+    </div>
+    <button class="button">返回顶部</button>
     <script>
+        const btn = document.querySelector(".button");
 
+        window.onscroll = function() {
+            //获取页面滚动位置
+            if(document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            }
+            else {
+                btn.style.display = "none";
+            }
+
+            //点击按钮时滚动回页面顶部
+            btn.addEventListener("click", function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        }
     </script>
 </body>
 </html>
