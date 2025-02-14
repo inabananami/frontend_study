@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "83566bebf3aaf36e",
@@ -171,6 +172,8 @@
   },
   "active": "8e5f17d64b5ee7a7",
   "lastOpenFiles": [
+    "static/随机点名_视频.mp4",
+    "static",
     "code/1.页面返回顶部.html",
     "code/1.页面返回顶部",
     "code/4.tab选项卡.html",
@@ -184,8 +187,6 @@
     "static/osu.jpeg",
     "static/nijigasaki.png",
     "img",
-    "static/随机点名_视频.mp4",
-    "static",
     "videos/随机点名_视频.mp4",
     "videos",
     "code/12.轮播图.html",
