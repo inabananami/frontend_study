@@ -4,13 +4,112 @@
     <meta charset="UTF-8">
     <title>2.瀑布流布局</title>
     <style>
-        
+        .img_box {
+            max-width: 1900px;
+        }
+        .img_box img {
+            width: 300px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="root_box">
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+        <div class="img_box">
+            <img src="../img/ayumu3.1.jpg">
+            <img src="../img/BanGDream.png">
+            <img src="../img/nijigasaki.png" alt="">
+            <img src="../img/osu.jpeg" alt="">
+            <img src="../img/ayumu3.1.jpg" alt="">
+            <img src="../img/BanGDream.png" alt="">
+        </div>
+    </div>
     <script>
+        window.addEventListener("scroll", function() {
+            let scrollTop = document.documentElement.scrollTop;
+            let scrollHeight = document.documentElement.scrollHeight;
+            let clientHeight = document.documentElement.clientHeight;
 
+            if(scrollTop + clientHeight >= scrollHeight - 50) {
+                console.log("检测到用户下拉，加载更多内容...");
+                const img_box = document.createElement("div");
+                const root_box = document.querySelector(".root_box");
+                img_box.classList.add("img_box");
+                img_box.innerHTML += `            
+                <img src="../img/ayumu3.1.jpg">
+                <img src="../img/BanGDream.png">
+                <img src="../img/nijigasaki.png" alt="">
+                <img src="../img/osu.jpeg" alt="">
+                <img src="../img/ayumu3.1.jpg" alt="">
+                <img src="../img/BanGDream.png" alt="">
+                `;
+                root_box.append(img_box);
+            }
+        });
     </script>
 </body>
 </html>
