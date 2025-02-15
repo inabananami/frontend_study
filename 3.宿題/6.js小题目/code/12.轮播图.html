@@ -17,6 +17,8 @@
             align-items: center;
             min-height: 900px;
             background-color: #EEE8;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
         }
         .carsel_inner_box {
             display: flex;
@@ -28,6 +30,7 @@
             margin-top: 100px;
             overflow: hidden;
             z-index: 1000;
+
         }
         /* 装载图片的长盒子 */
         .carsel_long_box {
@@ -117,6 +120,7 @@
 <body>
     <div class="carsel_root_box">
         <div class="carsel_inner_box">
+            <div class="carsel-cover-box"></div>
             <div class="carsel_long_box">
                 <div class="img_and_text_box">
                     <img src="../img/BanGDream.png">
@@ -190,102 +194,106 @@
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
+            <li></li>`
             <li></li>
             <li></li>
             <li></li>
             <li></li>
         </ul>
-        <script>
-            let j = 0;
-            let timer;
-            const inner_box = document.querySelector(".carsel_inner_box");
-            const trans = document.querySelector(".carsel_long_box");
-            const left_array = document.querySelector(".array_box div:nth-child(1)");
-            const right_array = document.querySelector(".array_box div:nth-child(2)");
-            const array_spot = document.querySelectorAll(".spot_list li");
-            const array_spot_list = document.querySelector(".spot_list");
-            /* 函数封装 */
-            //封装小红点事件
-            function dot_pos(j) {
-                array_spot.forEach(spot => spot.className = "");
-                array_spot[j].className = "active";
-            }
-            // 左滑函数
-            function left_slide() {
-                if(j == 0) {
-                    trans.style.transform = `translateX(${-830 * (j+array_spot.length - 1)}px)`;
-                    j = array_spot.length - 1;
-                    dot_pos(j);
-                }
-                else {
-                    j--;
-                    trans.style.transform = `translateX(${-830 * j}px)`;
-                    dot_pos(j);
-                }
-            }
-            //右滑函数
-            function right_slide() {
-                if (j == array_spot.length - 1) {
-                    j = 0;
-                    trans.style.transform = `translateX(0px)`;
-                    dot_pos(j);
-                } 
-                else {
-                    j++;
-                    trans.style.transform = `translateX(${-830 * j}px)`;
-                    dot_pos(j);
-                }
-            }
-            //小圆点相关函数
-            function dot(i){
-                j = i;
-                dot_pos(j);
-                if(i == 0) {
-                    trans.style.transform = `translateX(0px)`;
-                }
-                else {
-                    trans.style.transform = `translateX(${-830 * j}px)`;
-                }
-            }
-            //箭头浮现
-            function array_appear() {
-                left_array.style.opacity = 1;
-                right_array.style.opacity = 1;
-            }
-            //箭头消失
-            function array_disapp() {
-                left_array.style.opacity = 0;
-                right_array.style.opacity = 0;
-            }
-            //自动设置long_box
-            trans.style.left = `${(array_spot.length - 1) * 415}px`;
-            /* 调用上述函数 */
-            left_array.addEventListener("click",left_slide);
-            right_array.addEventListener("click",right_slide);
-            for(let i = 0; i < array_spot.length; i++) {
-                array_spot[i].addEventListener("click",function() { dot(i)});
-            }
-            //定时器
-            timer = setInterval(right_slide,5000);
-            //给最大的盒子加事件
-            inner_box.addEventListener("mouseover",function() {
-                clearInterval(timer);
-                array_appear();
-            });
-            inner_box.addEventListener("mouseleave",function() {
-                clearInterval(timer);
-                timer = setInterval(right_slide,5000);
-                array_disapp();
-            });
-            array_spot_list.addEventListener("mouseover", function() {
-                clearInterval(timer);
-            })
-            array_spot_list.addEventListener("mouseleave", function() {
-                clearInterval(timer);
-                timer = setInterval(right_slide,5000);
-            })
-        </script>
     </div>
+    <script>
+        let j = 0;
+        let timer;
+        const inner_box = document.querySelector(".carsel_inner_box");
+        const trans = document.querySelector(".carsel_long_box");
+        const left_array = document.querySelector(".array_box div:nth-child(1)");
+        const right_array = document.querySelector(".array_box div:nth-child(2)");
+        const array_spot = document.querySelectorAll(".spot_list li");
+        const array_spot_list = document.querySelector(".spot_list");
+        /* 函数封装 */
+        //封装小红点事件
+        function dot_pos(j) {
+            array_spot.forEach(spot => spot.className = "");
+            array_spot[j].className = "active";
+        }
+        // 左滑函数
+        function left_slide() {
+            if(j == 0) {
+                trans.style.transform = `translateX(${-830 * (j+array_spot.length - 1)}px)`;
+                trans.style.opacity = "0.2";
+                setTimeout(() => {
+                    trans.style.opacity = "1";
+                }, 400);
+                j = array_spot.length - 1;
+                dot_pos(j);
+            }
+            else {
+                j--;
+                trans.style.transform = `translateX(${-830 * j}px)`;
+                dot_pos(j);
+            }
+        }
+        //右滑函数
+        function right_slide() {
+            if (j == array_spot.length - 1) {
+                j = 0;
+                trans.style.transform = `translateX(0px)`;
+                dot_pos(j);
+            } 
+            else {
+                j++;
+                trans.style.transform = `translateX(${-830 * j}px)`;
+                dot_pos(j);
+            }
+        }
+        //小圆点相关函数
+        function dot(i){
+            j = i;
+            dot_pos(j);
+            if(i == 0) {
+                trans.style.transform = `translateX(0px)`;
+            }
+            else {
+                trans.style.transform = `translateX(${-830 * j}px)`;
+            }
+        }
+        //箭头浮现
+        function array_appear() {
+            left_array.style.opacity = 1;
+            right_array.style.opacity = 1;
+        }
+        //箭头消失
+        function array_disapp() {
+            left_array.style.opacity = 0;
+            right_array.style.opacity = 0;
+        }
+        //自动设置long_box
+        trans.style.left = `${(array_spot.length - 1) * 415}px`;
+        /* 调用上述函数 */
+        left_array.addEventListener("click",left_slide);
+        right_array.addEventListener("click",right_slide);
+        for(let i = 0; i < array_spot.length; i++) {
+            array_spot[i].addEventListener("click",function() { dot(i)});
+        }
+        //定时器
+        timer = setInterval(right_slide,5000);
+        //给最大的盒子加事件
+        inner_box.addEventListener("mouseover",function() {
+            clearInterval(timer);
+            array_appear();
+        });
+        inner_box.addEventListener("mouseleave",function() {
+            clearInterval(timer);
+            timer = setInterval(right_slide,5000);
+            array_disapp();
+        });
+        array_spot_list.addEventListener("mouseover", function() {
+            clearInterval(timer);
+        })
+        array_spot_list.addEventListener("mouseleave", function() {
+            clearInterval(timer);
+            timer = setInterval(right_slide,5000);
+        })
+    </script>
 </body>
 </html>

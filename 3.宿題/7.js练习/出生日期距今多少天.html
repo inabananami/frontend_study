@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>出生日期距今多少天</title>
+    <style>
+        .outer-box {
+            height: 300px;
+        }
+        .inner-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+            height: 100%;
+            max-width: 800px;
+            border: 1px solid #6666;
+            box-shadow: 5px 6px 5px 1px #6666;
+            border-radius: 10px;
+        }
+        .input-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .year, .month, .day {
+            height: 30px;
+            width: 180px;
+            border-radius: 4px;
+            border: 1px solid #6666;
+            font-family: "汉仪正圆";
+            font-size: 15px;
+        }
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 30px;
+            font-family: "汉仪正圆";
+        }
+        .submit {
+            width: 60px;
+            height: 30px;
+            margin-left: 85%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-box">
+        <div class="inner-box">
+            <h2>计算出生日期距今的天数</h2>
+            <div class="input-box">
+                <input class="year" type="text" placeholder="请输入你的出生年份">
+                <input class="month" type="text" placeholder="请输入你的出生月份">
+                <input class="day" type="text" placeholder="请输入你的出生日">
+            </div>
+            <button class="submit">确认</button>
+        </div>
+        <div class="total_day"></div>
+    </div>
+    <script>
+        const input_year = document.querySelector(".year");
+        const input_month = document.querySelector(".month");
+        const input_day = document.querySelector(".day");
+        const submit = document.querySelector(".submit");
+        const year_day_nor = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const year_day_spe = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const time = new Date();
+        const today_year = time.getFullYear();
+        const today_month = time.getMonth() + 1;
+        const today = time.getDay();
+
+        submit.addEventListener("click",function() {
+            let total_day = 0;
+            const year = parseInt(input_year.value);
+            const month = parseInt(input_month.value);
+            const day = parseInt(input_day.value);
+            if(today_year % 400 == 0 || (today_year % 4 == 0 && today_year % 100 != 0)) {
+                for(let i = 0; i < year_day_spe.length; i++) {
+                    if(today_month == i + 1) {
+                        total_day += today; 
+                        for(let j = 0; j < today_month - 1; j--) {
+                            total_day += year_day_spe[j];
+                        }
+                    }
+                }
+            }
+            else {
+                for(let i = 0; i < year_day_nor.length; i++) {
+                    if(today_month == i + 1) {
+                        total_day += today;
+                        for(let j = i; j >0; j--) {
+                            total_day += year_day_nor[j];
+                        }
+                    }
+                }
+            }
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                for(let i = 0; i < year_day_spe.length; i++) {
+                    if(month == i + 1) {
+                        total_day += year_day_spe[i] - day; 
+                        for(let j = i; j < year_day_spe.length; j++) {
+                            total_day += year_day_spe[j];
+                        }
+                    }
+                }
+            }
+            else {
+                for(let i = 0; i < year_day_nor.length; i++) {
+                    if(month == i + 1) {
+                        total_day += year_day_nor[i] - day; 
+                        for(let j = i; j < year_day_nor.length; j++) {
+                            total_day += year_day_nor[j];
+                        }
+                    }
+                }
+            }
+            for(let i = year + 1; i < today_year; i ++) {
+                if (i % 400 == 0 || (i % 4 == 0 && i % 100 != 0)) {
+                    total_day += 366;
+                }
+                else {
+                    total_day += 365;
+                }
+            }
+            console.log(total_day);
+        });
+    </script>
+</body>
+</html>

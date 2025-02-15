@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.vue実例</title>
+    <!--  開発パッケージを導入する -->
+    <script src="./ソース/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- ここでコードを書く -->
+        <h1>{{ msg }}</h1>
+        <a href="https://google.co.jp">{{ count }}</a>
+    </div>
+
+    <script>
+        const app = new Vue({
+            // elを通じて、ボックスの管理仕事を指定する
+            el: '#app',
+            data: {
+                msg: 'Hello 黒馬',
+                count: 'googleにジャンプする'
+            }
+        });
+    </script>
+</body>
+</html>

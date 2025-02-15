@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.都道府県連動リスト</title>
+</head>
+<body>
+    <select name="province" id="province" onchange="updateCities()">
+        <option value="">--都府--</option>
+    </select>
+    <select name="city" id="city" onchange="updateDistricts()">
+        <option value="请选择市">--道県--</option>
+    </select>
+    <select name="district" id="district">
+        <option value="请选择区">--区市--</option>
+    </select>
+    <script>
+        class Prefecture {
+            constructor(id, code, name, areaId) {
+                this.id = id;
+                this.code = code;
+                this.name = name;
+                this.areaId = areaId;
+            }
+        }
+        fetch("https://cors-anywhere.herokuapp.com/https://apis.apima.net/k2srm05wzm1pdl3xk0sv/v1/prefectures/")
+        .then(Response => Response.json())
+        .then(data => {
+            const prefectures = data.map(item => new Prefecture(item.id, item.code, item.name, item.area_id));
+            console.log(prefectures);
+
+            const prefectureNames = prefectures.map(pref => pref.name);
+            console.log(prefectureNames);
+        })
+        .catch(error => console.error("エラーが発生します：", error));
+
+        
+    </script>
+</body>
+</html>
